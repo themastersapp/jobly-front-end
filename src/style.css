@@ -1,0 +1,30 @@
+Form{
+    width: 40%;
+    position: relative;
+    left: 30%;
+    border: 2px solid #ced4da;
+    border-radius:20px ;
+    margin: 30px 0 30px 0;
+    padding: 20px;
+
+}
+Label{
+position: relative;
+left: 42%;
+font-size: 25px;
+font-weight: bolder;
+}
+.FormButton{
+    margin-left: 44%;
+}
+.forminputs{
+    border-radius: 30px;
+
+}
+.myCarousel{
+   width: 80%;
+   margin: auto; 
+   margin-top: 30px;
+
+}
+
