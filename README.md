@@ -1,4 +1,7 @@
-Team members: Ahmad alrasheed , Mohammad alhanbali , mona saleh , khalid hamedi , majed al-swaeer
+## Team members: Ahmad alrasheed , Mohammad alhanbali , mona saleh , khalid hamedi , majed al-swaeer
+
+# Jobly
+actually its amazing idea because it solves the problem of hard searching for jobs and contacting the target company and send the cv to the HR, we are third party company all what you have to do is enter to our web application and apply for job by using "jobly" it will make the process of finsing your dream job so easy , only by searching of the job title you want and putting the location or the country you are in.
 
 # Cooperation Plan
 ## What are the key strengths of each person on the team?
