@@ -24,18 +24,18 @@ class Bookmarks extends React.Component {
                         if (item.bookmark === true) {
                             return (
                                 <Col>
-                                    <Card style={{ width: '56rem' }}>
-
-                                        <Card.Body>
-                                        <Button variant="primary" className="bookMarkButton" onClick={() => {
+                                    <Card className = "bookmarkCards" style={{ width: '56rem' }}>
+                                        <Button variant="Light" className={item.bookmark? "bookMarkButtonActive": "bookMarkButtonInactive"} onClick={() => {
                                                 if (item.bookmark === false) {
                                                     item.bookmark = true;
                                                 } else {
                                                     item.bookmark = false;
                                                 }
                                                 this.props.bookmarkHandler(item);
-                                            }}> <FontAwesomeIcon className="bookMarkIcon" icon={faBookmark} />
+                                            }}> <FontAwesomeIcon className={item.bookmark? "bookMarkIconActive":"bookMarkIconInctive"} icon={faBookmark} />
                                             </Button>
+
+                                        <Card.Body>
 
                                             <Card.Title>{item.title}</Card.Title>
 

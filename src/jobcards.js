@@ -4,7 +4,9 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './style.css'
 
 class JobCards extends React.Component {
 
@@ -17,6 +19,16 @@ class JobCards extends React.Component {
                         return (
                             <Col>
                                 <Card style={{ width: '18rem' }}>
+                                {!item.bookmark &&
+                                    <Button variant="Light" className={item.bookmark ? "bookMarkButtonActive" : "bookMarkButtonInactive"} onClick={() => {
+                                        if (item.bookmark === false) {
+                                            item.bookmark = true;
+                                        } else {
+                                            item.bookmark = false;
+                                        }
+                                        this.props.bookmarkHandler(item);
+                                    }}>
+                                         <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faBookmark} /> </Button>}
 
                                     <Card.Body>
                                         <Card.Title>{item.title}</Card.Title>
@@ -31,9 +43,14 @@ class JobCards extends React.Component {
 
                                             </ListGroup>
                                         </Card.Text>
-                                        <Button variant="primary" onClick={() => { item.bookmark = true;
-                                                 this.props.bookmarkHandler(item);
-                                                }}>Bookmark</Button>
+                                        <Button variant="primary" onClick={() => {
+                                            if (item.bookmark === false) {
+                                                item.bookmark = true;
+                                            } else {
+                                                item.bookmark = false;
+                                            }
+                                            this.props.bookmarkHandler(item);
+                                        }}>Bookmark</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
