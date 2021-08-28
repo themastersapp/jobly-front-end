@@ -4,7 +4,6 @@ import Header from './Header';
 import Footer from './Footer';
 import { withAuth0 } from "@auth0/auth0-react";
 import Profile from './profile';
-import MyFavoriteBooks from './BestBooks';
 import Login from './Login';
 import Carousels from './coursel';
 import JobForm from './form';
@@ -18,13 +17,15 @@ import {
   Route
 } from "react-router-dom";
 import axios from 'axios';
+import Bookmark from './Bookmark';
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state={
       JobData:[],
-      showcard:false
+      showcard:false,
+      bookmarkedJobs: [],
     }
   }
 
@@ -44,6 +45,23 @@ class App extends React.Component {
     })
   }
 
+bookmarkHandler = async (bookmarked) => {
+console.log('bookmarked', bookmarked);
+if(bookmarked.bookmark === true){
+  let jobBookmark = await axios.post('http://localhost:3001/jobbookmarks', bookmarked);
+  
+  await this.setState({
+    bookmarkedJobs : jobBookmark.data,
+  })
+
+} else {
+  let jobBookmark = await axios.delete(`http://localhost:3001/jobbookmarks/${bookmarked._id}`);
+await this.setState({
+    bookmarkedJobs : jobBookmark.data,
+  })
+}
+
+}
 
   render() {
 
@@ -59,7 +77,7 @@ class App extends React.Component {
                 {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
                 {(isAuthenticated) ? (<Carousels/> ): <Login/> }
                 {(isAuthenticated) && (<JobForm Jobresults={this.Jobresults}/> )}
-                {(isAuthenticated) && this.state.showcard && (<JobCards JobResults={this.state.JobData}/> )}
+                {(isAuthenticated) && this.state.showcard && (<JobCards JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} /> )}
 
                 
 
@@ -71,7 +89,9 @@ class App extends React.Component {
               <Route exact path="/profile">
               <Profile/>
               </Route>
-   
+              <Route exact path="/bookmarks">
+              <Bookmark bookmarkedJobs={this.state.bookmarkedJobs} bookmarkHandler={this.bookmarkHandler} />
+              </Route>
 
 
             </Switch>
