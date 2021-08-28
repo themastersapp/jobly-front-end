@@ -28,3 +28,26 @@ font-weight: bolder;
 
 }
 
+
+.bookMarkButton{
+    position: relative;
+    /* margin-left: 80%;
+    margin-bottom: 30px; */
+    /* display: inline; */
+    top: 20px;
+    left: 100px;
+    opacity: 30%;
+    background-color: transparent;
+    border:  none;
+    color: transparent;
+}
+
+.bookMarkButton:hover{
+    border:  none;
+
+    opacity: 80%;
+}
+
+.bookMarkIcon{
+color: red
+}
