@@ -11,7 +11,7 @@ Form{
 Label{
 position: relative;
 left: 42%;
-font-size: 25px;
+font-size: 24px;
 font-weight: bolder;
 }
 .FormButton{
@@ -28,31 +28,72 @@ font-weight: bolder;
 
 }
 
+.bookmarkCards{
+    /* margin: auto; */
+}
 
-.bookMarkButton{
+.bookMarkButtonActive{
     position: relative;
-    /* margin-left: 80%;
-    margin-bottom: 30px; */
     /* display: inline; */
-    top: 20px;
-    left: 100px;
-    opacity: 30%;
-    background-color: transparent;
+    top: 50px; 
+    left:1%; 
+    width: 50px;
+    font-size: 32px;
     border:  none;
     color: transparent;
 }
 
-.bookMarkButton:hover{
+
+.bookMarkButtonInactive{
+    position: relative;
+    /* display: inline; */
+    top: 50px; 
+    left:1%; 
+    width: 50px;
+    font-size: 32px;
     border:  none;
-
-    opacity: 80%;
-}
-
-.bookMarkIcon{
-color: red
+    color: transparent;
 }
 
 
+.bookMarkIconActive{
+    border:  none;
+    opacity: 20%;
+    color: red
+}
+
+.bookMarkIconActive:hover{
+    opacity: 50%;
+    transition:500ms;
+    color: rgb(163, 105, 105)
+}
+
+.bookMarkIconActive:active{
+    opacity: 90%;
+    transition:500ms;
+    color: grey
+}
+
+.bookMarkIconInctive{
+    opacity: 20%;
+    border:  none;
+    color: grey;
+}
+
+.bookMarkIconInctive:hover{
+    opacity: 50%;
+    transition:500ms;
+    color: rgb(131, 131, 131)
+}
+
+.bookMarkIconInctive:active{
+    opacity: 90%;
+    border:  none;
+    transition:500ms;
+    color: red;
+
+
+}
 
 .new_footer_area {
     background: #fbfbfd;
