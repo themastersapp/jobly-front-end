@@ -54,14 +54,40 @@ link{
   /* justify-content:space-between; */
 }
 /* .tags{} */
-LogoutButton {
+/* LogoutButton {
   transition-duration: 0.4s;
 }
 LoginButton{
   transition-duration: 0.4s;
+} */
+
+/* Fill button styling */
+.fill button {
+  font-size: 17px;
+  /* font-weight: 200; */
+  color:white;
+  width: 200px;
+  height: 70px;
+  letter-spacing: 5px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 3px solid white;
+  /* cursor: pointer; */
+  margin-left: 8rem;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+.logContaner{
+  padding-left: 3ch;
+  position: relative;
+  right: 6%;
+  top:5%;
 }
 
-.tags:hover {
+
+/* End of Fill Button  */
+
+.tags button:hover {
   background-color: #A6B1E1; /* Green */
   color: white;
 }
