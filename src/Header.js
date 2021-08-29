@@ -31,13 +31,14 @@ class Header extends React.Component {
             <div className="logContaner">
               <Card.Img variant="top" style={{ width: '130px', height: '100px' }} src="https://cdn.discordapp.com/attachments/880434007140085811/881454520499077120/LogoTie.png" />
 
-            </div>
+            </div >
             {/* <img src={}/> */}
-            <Link to="/">Home</Link>
-            <Link to="/profile">Profile</Link>
-            <Link to="/bookmarks">Bookmarks</Link>
-            <Link to="/applications">Applications</Link>
-
+            {/* <div classNames="linkContaner"> */}
+            <Link  classNames="linkContaner" to="/">Home</Link>
+            <Link  classNames="linkContaner" to="/profile">Profile</Link>
+            <Link  classNames="linkContaner" to="/bookmarks">Bookmarks</Link>
+            <Link  classNames="linkContaner" to="/applications">Applications</Link>
+{/* </div> */}
             <div className="fill">
               {(this.props.auth0.isAuthenticated) ? <LogoutButton /> : <LoginButton />}
             </div>

@@ -125,6 +125,7 @@ background: none;
 
 .new_footer_area {
     background: #fbfbfd;
+    z-index: 1;
 }
 
 
@@ -321,6 +322,10 @@ h1, h2, h3, h4, h5, h6 {
   100% {
     left: 100%;
   }
+}
+/* done logout button */
+.logOutBtn{
+    font-size: 9px;
 }
 
 /*************footer End*****************/

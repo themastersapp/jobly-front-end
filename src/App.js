@@ -9,6 +9,8 @@ import Carousels from './coursel';
 import JobForm from './form';
 import JobCards from './jobcards';
 import Applcations from './Applcations';
+// import Carousel from 'react-bootstrap/Carousel';
+
 
 // import './style.css'
 
