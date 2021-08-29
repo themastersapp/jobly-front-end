@@ -4,36 +4,57 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PopoutCard from './PopoutCard';
 import './style.css'
 
 class Bookmarks extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showModal: false,
+            popupCard: {},
+            popItem: {},
+        }
+    }
 
-    // bookmarkHandler = (item) => {
-    //     this.props.bookmarkHandler(item);
+    handleClose = () => {
+        this.setState({
+            showModal: false,
+        })
+    }
+    handleShow = (item) => {
+        this.setState({
+            showModal: true,
+            popItem: item,
+        })
+    }
 
-    // }
+    bookmarkHandler = async (item) => {
+        await this.props.bookmarkHandler(item);
+
+    }
 
     render() {
-        console.log(this.props);
+
         return (
             <>
                 <Row xs={1} md={2} className="g-4">
-                    {this.props.bookmarkedJobs.map(item => {
+                    {this.props.bookmarkedJobs.map((item, index) => {
                         if (item.bookmark === true) {
                             return (
-                                <Col>
-                                    <Card className = "bookmarkCards" style={{ width: '56rem' }}>
-                                        <Button variant="Light" className={item.bookmark? "bookMarkButtonActive": "bookMarkButtonInactive"} onClick={() => {
-                                                if (item.bookmark === false) {
-                                                    item.bookmark = true;
-                                                } else {
-                                                    item.bookmark = false;
-                                                }
-                                                this.props.bookmarkHandler(item);
-                                            }}> <FontAwesomeIcon className={item.bookmark? "bookMarkIconActive":"bookMarkIconInctive"} icon={faBookmark} />
-                                            </Button>
+                                <Col key={index}>
+                                    <Card className="bookmarkCards" style={{ width: '56rem' }}>
+                                        <Button variant="Light" className={item.bookmark ? "bookMarkButtonActive" : "bookMarkButtonInactive"} onClick={() => {
+                                            if (item.bookmark === false) {
+                                                item.bookmark = true;
+                                            } else {
+                                                item.bookmark = false;
+                                            }
+                                            this.bookmarkHandler(item);
+                                        }}> <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faTrash} />
+                                        </Button>
 
                                         <Card.Body>
 
@@ -42,9 +63,10 @@ class Bookmarks extends React.Component {
                                             <Card.Text>
                                                 <ListGroup>
 
-                                                    <ListGroup.Item>{item.description}
-                                                        <FontAwesomeIcon icon="user" />
-
+                                                    <ListGroup.Item>{item.description.split(' ').splice(0, 20).join(' ')}
+                                                        <Button variant="Light" size="sm" onClick={() => { this.handleShow(item) }} className="popupCard">
+                                                            ..Read More
+                                                        </Button>{' '}
                                                     </ListGroup.Item>
                                                     <ListGroup.Item>{item.company_name}</ListGroup.Item>
                                                     <ListGroup.Item>{item.via}</ListGroup.Item>
@@ -52,7 +74,7 @@ class Bookmarks extends React.Component {
 
                                                 </ListGroup>
                                             </Card.Text>
-                                         
+
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -62,7 +84,7 @@ class Bookmarks extends React.Component {
 
                 </Row>
 
-
+                <PopoutCard handleClose={this.handleClose} showModal={this.state.showModal} popItem={this.state.popItem}/>
             </>
         )
     }

@@ -1,4 +1,4 @@
-Form{
+.myform{
     width: 40%;
     position: relative;
     left: 30%;
@@ -94,6 +94,34 @@ font-weight: bolder;
 
 
 }
+
+.popupCard{
+color: rgb(0,123,255);
+border: none;
+border-radius: 20px;
+background: none;
+
+
+}
+
+.popupCard:hover{
+    color: white;
+    background-color: rgb(0,123,255);
+    opacity: 50%;
+    transition: 500ms;
+    border: none;
+    font-size: 16px;
+}
+
+.popupCard:active{
+    color: white;
+    background-color: rgb(0,123,255);
+    opacity: 100%;
+    transition: 500ms;
+    border: none;
+
+}
+
 
 .new_footer_area {
     background: #fbfbfd;
