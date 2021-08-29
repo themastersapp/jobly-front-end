@@ -9,11 +9,13 @@ class Login extends React.Component {
   render() {
     return(
       <div >
-{/* <Carousel fade className="corousalCont">
-  <Carousel.Item interval={3000}>
-    <img
+{ <Carousel fade className="corousalCont">
+  <Carousel.Item interval={1500}>
+    <img 
       className="d-block w-100"
-      src="https://media.istockphoto.com/photos/africanamerican-man-browsing-work-online-using-job-search-computer-picture-id918365088?k=20&m=918365088&s=612x612&w=0&h=KUojGu6HCCFUi7HiYRkaaQ0iIOFd724sLwwmGyYam_E="
+      height='910px'
+      width='1000px'
+      src="https://images-ext-2.discordapp.net/external/fSukZweKce7UiqTEc5yrjVJmzTf4G0fcGa2tITNz4Dg/https/as1.ftcdn.net/v2/jpg/02/42/82/98/1000_F_242829844_TMmbiUSjDKvqbbLx2CI8dMEpyKihlb34.jpg"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -21,10 +23,12 @@ class Login extends React.Component {
       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
     </Carousel.Caption>
   </Carousel.Item>
-  <Carousel.Item interval={3000}>
+  <Carousel.Item interval={1500}>
     <img
+      height='910px'
+      width='1000px'
       className="d-block w-100"
-      src="https://cdn.aarp.net/content/dam/aarp/work/job_hunting/2015_06/1140-job-seach-online-tools-reseach-employment.jpg"
+      src="https://images-ext-2.discordapp.net/external/BA_JlpU-lMu2v3ycXCZmSLbSHerJvarnRx2-nCbkkME/https/as2.ftcdn.net/v2/jpg/03/82/72/29/1000_F_382722975_VgqVFhZvhUcOExL802Hfnc9AUOBp41nP.jpg"
       alt="Second slide"
     />
 
@@ -33,10 +37,12 @@ class Login extends React.Component {
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </Carousel.Caption>
   </Carousel.Item>
-  <Carousel.Item interval={3000}>
+  <Carousel.Item interval={1500}>
     <img
+      height='910px'
+      width='1000px'
       className="d-block w-100"
-      src="https://static.jobscan.co/blog/uploads/Job-Search-Image-600x318.jpg"
+      src="https://images-ext-2.discordapp.net/external/oVdcPs2Us2oHgA70V3jEirEGXuwpinjNBS4tPP1fnp4/https/as2.ftcdn.net/v2/jpg/01/74/58/51/1000_F_174585157_xnVNilsOACSyWOxaJV8FlyKTS5nEpf6d.jpg"
       alt="Third slide"
     />
 
@@ -46,11 +52,16 @@ class Login extends React.Component {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-       */}
-      <Card style={{ width: '18rem' }}>
+       }
+
+
+
+
+
+      <Card className="MyCard" style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>Log In</Card.Title>
-          <Card.Text>
+          <Card.Title></Card.Title>
+          <Card.Text style={{fontSize:'30px',fontWeight:'bolder'}}>
             Click Below to Log In
           </Card.Text>
           {/* TODO: add a `LoginButton` component here that will log the user in with Auth0 */}
