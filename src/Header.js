@@ -6,6 +6,7 @@ import './Header.css';
 import { withAuth0 } from "@auth0/auth0-react";
 import LogoutButton from './logoutbutton';
 import LoginButton from './loginbutton'
+import { Card } from 'react-bootstrap';
 
 
 class Header extends React.Component {
@@ -27,11 +28,15 @@ class Header extends React.Component {
 {/* <!--Content before waves--> */}
 <div class="inner-header flex">
 {/* <!--Just the logo.. Don't mind this--> */}
+<div class="logContaner">
+<Card.Img variant="top" style={{width:'130px',height:'100px'}} src="https://cdn.discordapp.com/attachments/880434007140085811/881454520499077120/LogoTie.png" />
 
+</div>
+{/* <img src={}/> */}
 <Link to="/">Home</Link>
          <Link to="/profile">Profile</Link>
          <Link to="/bookmarks">Bookmarks</Link>
-         <div class="tags">
+         <div class="fill">
          {(this.props.auth0.isAuthenticated) ? <LogoutButton/>:<LoginButton/>}
          </div>
 </div>
