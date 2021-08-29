@@ -107,7 +107,15 @@ class App extends React.Component {
 
   }
 
+  activeFunc=async(item)=>{
+    console.log({item})
 
+    let putActive= await axios.put('http://localhost:3001/applications', item);
+    this.setState({
+      sendApplication: putActive.data,
+    })
+
+  }
   render() {
 
     const { isAuthenticated } = this.props.auth0;
@@ -124,10 +132,6 @@ class App extends React.Component {
               {(isAuthenticated) && (<JobForm Jobresults={this.Jobresults} />)}
               {(isAuthenticated) && this.state.showcard && (<JobCards JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} applicationHandler={this.applicationHandler} extractApplication={this.extractApplication}/>)}
 
-
-
-
-
             </Route>
 
             {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
@@ -139,9 +143,10 @@ class App extends React.Component {
             </Route>
 
             <Route exact path="/applications">
-              <Applcations sentApplication={this.state.sentApplication} />
+              
+              <Applcations sentApplication={this.state.sentApplication} activeFunc={this.activeFunc}/>
             </Route>
-
+          
           </Switch>
 
           <Footer />
