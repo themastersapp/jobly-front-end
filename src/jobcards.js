@@ -55,6 +55,11 @@ class JobCards extends React.Component {
             <>
                 <Row xs={1} md={4} className="g-4">
                     {this.props.JobResults.map((item, index) => {
+                        this.props.bookmarkedJobs.map(element=>{
+                            if(item.title==element.title){
+                                item.bookmark=element.bookmark
+                            }
+                        })
                         return (
                             <Col key={index}>
                                 <Card style={{ width: '18rem' }}>
@@ -102,7 +107,7 @@ class JobCards extends React.Component {
                 </Row>
 
                 <PopoutCard handleClose={this.handleClose} showModal={this.state.showModal} popItem={this.state.popItem} />
-                <ApplicationModal handleApplicationClose={this.handleApplicationClose} showApplication={this.state.showApplication} applicationItem={this.state.applicationItem} applicationHandler={this.props.applicationHandler} />
+                <ApplicationModal retrieveProfile={this.props.retrieveProfile} handleApplicationClose={this.handleApplicationClose} showApplication={this.state.showApplication} applicationItem={this.state.applicationItem} applicationHandler={this.props.applicationHandler} />
 
             </>
         )

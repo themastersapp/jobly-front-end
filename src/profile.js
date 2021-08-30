@@ -9,13 +9,14 @@ const Profile = (props) => {
     return <div>Loading ...</div>;
   }
 
+  {console.log(props.retrieveProfile)}
   return (
     isAuthenticated && (
       <div>
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>
-        <UpdateForm submittProfileData={props.submittProfileData}/>
+        <UpdateForm retrieveProfile={props.retrieveProfile} submittProfileData={props.submittProfileData}/>
       </div>
     )
   );
