@@ -9,6 +9,7 @@ import Carousels from './coursel';
 import JobForm from './form';
 import JobCards from './jobcards';
 import Applcations from './Applcations';
+
 // import Carousel from 'react-bootstrap/Carousel';
 
 
@@ -18,7 +19,8 @@ import Applcations from './Applcations';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import axios from 'axios';
 import Bookmark from './Bookmark';
@@ -32,8 +34,9 @@ class App extends React.Component {
       bookmarkedJobs: [],
       sentApplication: [],
       appliedApplication: {},
-      profileData:{},
-      user:{}
+      profileData:[],
+      user:{},
+      retrieveProfile:[]
     }
   }
 
@@ -72,6 +75,13 @@ class App extends React.Component {
       let jobBookmark = await axios.delete(`http://localhost:3001/jobbookmarks/${bookMarkData.bookmarked._id}`);
       await this.setState({
         bookmarkedJobs: jobBookmark.data,
+      })
+      this.state.JobData.map(item=>{
+        
+        if(item.title==bookmarked.title){
+          return item.bookmark=false;
+        }
+        console.log('helooooooooooooooooooo',this.state.JobData);
       })
     }
 
@@ -132,11 +142,20 @@ class App extends React.Component {
       bio:event.target.bio.value,
       user:user.email,
     }
-   
-    let dataProfileput=await axios.post('http://localhost:3001/profileForm',dataProfile)
-    await this.setState({
-      profileData:dataProfileput.data
-    })
+    console.log(this.state.retrieveProfile.length, this.state.retrieveProfile);
+    if(this.state.retrieveProfile.length===0){
+      let dataProfileput=await axios.post('http://localhost:3001/profileForm',dataProfile)
+      await this.setState({
+        retrieveProfile:dataProfileput.data
+      })
+
+    }else{
+      let dataProfileput=await axios.put('http://localhost:3001/retrieveProfile',dataProfile)
+      await this.setState({
+        retrieveProfile:dataProfileput.data
+      })
+    }
+
 
   }
 
@@ -166,8 +185,19 @@ class App extends React.Component {
         await this.setState({
           user:user
         })
-        let checkData=await axios.get(`http://localhost:3001/checkdata?email=${this.state.user.email}`)
-        console.log(checkData);
+        let retrieveApplications=await axios.get(`http://localhost:3001/retrieveApplications?email=${this.state.user.email}`)
+        // console.log(retrieveApplications);
+        let retrieveBookmarks=await axios.get(`http://localhost:3001/retrieveBookmarks?email=${this.state.user.email}`)
+        // console.log(retrieveBookmarks.data);
+        let retrieveProfile=await axios.get(`http://localhost:3001/retrieveProfile?email=${this.state.user.email}`)
+        console.log(retrieveProfile.data);
+        await this.setState({
+          bookmarkedJobs:retrieveBookmarks.data,
+          sentApplication:retrieveApplications.data,
+          retrieveProfile:retrieveProfile.data,
+          
+        })
+
       }
     }
       // console.log('user lenght ',Object.keys(this.state.user).length);
@@ -175,6 +205,11 @@ class App extends React.Component {
   }
 
   render() {
+    // console.log(this.state.user);
+    let myData=(this.state.retrieveProfile.length);
+    console.log('mmmmmmmmmmmm',myData);
+    
+    console.log('xxxxxxxxxxxxxx',this.state.showcard);
 
     const { isAuthenticated } = this.props.auth0;
     console.log('app', this.props);
@@ -186,23 +221,29 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/">
               {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
-              {(isAuthenticated) ? (<Carousels />) : <Login />}
+              {/* {isAuthenticated ? <Redirect to="/profile" /> : <Login />} */}
+              {!(isAuthenticated) ? <Login /> :(myData === 0 )? <Profile retrieveProfile={this.state.retrieveProfile} submittProfileData={this.submittProfileData}/> :(myData !== 0 )?   
+             <> <Carousels/> <JobForm Jobresults={this.Jobresults}  />{(this.state.showcard==true)&& <JobCards bookmarkedJobs={this.state.bookmarkedJobs} retrieveProfile={this.state.retrieveProfile} JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} applicationHandler={this.applicationHandler} extractApplication={this.extractApplication}/>}</>:null}
+              
+
+              {/* {(isAuthenticated) ? (<Carousels />) : <Login />}
+              {isAuthenticated&&((Object.keys(this.state.user).length) === 0)&&(<Profile retrieveProfile={this.state.retrieveProfile} submittProfileData={this.submittProfileData}/>)}
               {(isAuthenticated) && (<JobForm Jobresults={this.Jobresults} />)}
-              {(isAuthenticated) && this.state.showcard && (<JobCards JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} applicationHandler={this.applicationHandler} extractApplication={this.extractApplication}/>)}
+              {(isAuthenticated) && this.state.showcard && (<JobCards bookmarkedJobs={this.state.bookmarkedJobs} retrieveProfile={this.state.retrieveProfile} JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} applicationHandler={this.applicationHandler} extractApplication={this.extractApplication}/>)} */}
 
             </Route>
 
             {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
             <Route exact path="/profile">
-              <Profile submittProfileData={this.submittProfileData}/>
+            {(isAuthenticated) ? (<Profile retrieveProfile={this.state.retrieveProfile} submittProfileData={this.submittProfileData}/>): <Login />}
             </Route>
             <Route exact path="/bookmarks">
-              <Bookmark bookmarkedJobs={this.state.bookmarkedJobs} bookmarkHandler={this.bookmarkHandler} />
+              {(isAuthenticated)?<Bookmark bookmarkedJobs={this.state.bookmarkedJobs} bookmarkHandler={this.bookmarkHandler} />: <Login />}
             </Route>
 
             <Route exact path="/applications">
               
-              <Applcations sentApplication={this.state.sentApplication} activeFunc={this.activeFunc}/>
+              {isAuthenticated?<Applcations sentApplication={this.state.sentApplication} activeFunc={this.activeFunc}/>:<Login />}
             </Route>
           
           </Switch>

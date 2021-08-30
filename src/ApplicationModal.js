@@ -82,7 +82,7 @@ class ApplicationModal extends React.Component {
          this.props.handleApplicationClose();
 
     }
-
+    
     render() {
 
         const { user, isAuthenticated } = this.props.auth0;
@@ -126,22 +126,22 @@ class ApplicationModal extends React.Component {
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Phone Number</Form.Label>
-                                <Form.Control type="number" name="userPhone" required />
+                                <Form.Control type="number" name="userPhone" required defaultValue={this.props.retrieveProfile[0].phoneNumber} />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Address</Form.Label>
-                                <Form.Control type="text" name="address" required />
+                                <Form.Control type="text" name="address" required defaultValue={this.props.retrieveProfile[0].address} />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Major</Form.Label>
-                                <Form.Control type="text" name="major" required />
+                                <Form.Control type="text" name="major" required defaultValue={this.props.retrieveProfile[0].major} />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Bio</Form.Label>
-                                <Form.Control as="textarea" rows={3} name="bio" required />
+                                <Form.Control as="textarea" rows={3} name="bio" required defaultValue={this.props.retrieveProfile[0].bio}  />
                             </Form.Group>
 
                             <Button variant="primary" type="submit" >
