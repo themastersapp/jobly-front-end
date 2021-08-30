@@ -32,6 +32,8 @@ class App extends React.Component {
       bookmarkedJobs: [],
       sentApplication: [],
       appliedApplication: {},
+      profileData:{},
+      user:{}
     }
   }
 
@@ -116,6 +118,62 @@ class App extends React.Component {
     })
 
   }
+
+  submittProfileData=async (event)=>{
+
+    event.preventDefault();
+    const {user}=this.props.auth0
+    let dataProfile={
+      phoneNumber:event.target.phoneNumber.value,
+      address:event.target.address.value,
+      major:event.target.major.value,
+      skills:event.target.skills.value,
+      experience:event.target.experience.value,
+      bio:event.target.bio.value,
+      user:user.email,
+    }
+   
+    let dataProfileput=await axios.post('http://localhost:3001/profileForm',dataProfile)
+    await this.setState({
+      profileData:dataProfileput.data
+    })
+
+  }
+
+  // async componentDidMount(){
+  //   const {isAuthenticated}=this.props.auth0;
+  //   console.log('befor from didmount');
+  //   console.log(isAuthenticated);
+
+  //    if( isAuthenticated){
+  //     console.log('from didmount');
+  //     const {user} = this.props.auth0
+  //     await this.setState({
+  //       user:user
+  //     })
+  //     let checkData=await axios.get('http://localhost:3001/checkdata',this.state.user.email)
+  //   }
+  // }
+
+   componentDidUpdate=async(prevProps, prevState) =>{
+    const {isAuthenticated}=this.props.auth0;
+
+    if( (Object.keys(this.state.user).length) === 0 ){
+      if(isAuthenticated){
+        console.log('componentDidUpdate');
+        const {user} = this.props.auth0
+        
+        await this.setState({
+          user:user
+        })
+        let checkData=await axios.get(`http://localhost:3001/checkdata?email=${this.state.user.email}`)
+        console.log(checkData);
+      }
+    }
+      // console.log('user lenght ',Object.keys(this.state.user).length);
+
+  }
+
   render() {
 
     const { isAuthenticated } = this.props.auth0;
@@ -136,7 +194,7 @@ class App extends React.Component {
 
             {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
             <Route exact path="/profile">
-              <Profile />
+              <Profile submittProfileData={this.submittProfileData}/>
             </Route>
             <Route exact path="/bookmarks">
               <Bookmark bookmarkedJobs={this.state.bookmarkedJobs} bookmarkHandler={this.bookmarkHandler} />
