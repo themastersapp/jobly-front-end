@@ -53,18 +53,25 @@ class JobCards extends React.Component {
         console.log(this.state);
         return (
             <>
-                <Row xs={1} md={4} className="g-4">
+                <Row xs={1} md={3} className="g-4">
                     {this.props.JobResults.map((item, index) => {
-                        this.props.bookmarkedJobs.map(element=>{
-                            if(item.title==element.title){
-                                item.bookmark=element.bookmark
+                        this.props.bookmarkedJobs.map(element => {
+                            if (item.title == element.title) {
+                                item.bookmark = element.bookmark
                             }
                         })
                         return (
-                            <Col key={index}>
-                                <Card style={{ width: '18rem' }}>
-                                    {!item.bookmark &&
-                                        <Button variant="Light" className={item.bookmark ? "bookMarkButtonActive" : "bookMarkButtonInactive"} onClick={() => {
+                            <Col className="jobCardsCol" key={index}>
+                                <Card style={{ width: '28rem' }} class="card card-custom bg-white border-white border-0">
+
+
+                                    <div className="card-custom-img">
+                                        <Card.Img className="card-custom-img" variant="top" src="https://thumbs.gfycat.com/AdorableLonelyKilldeer-size_restricted.gif" />
+                                    </div>
+
+                                    <div className="card-custom-avatar">
+                                        {!item.bookmark &&
+                                        <Button  variant="Light" className={item.bookmark ? "bookMarkButtonActive img-fluid" : "bookMarkButtonInactive img-fluid"} onClick={() => {
                                             if (item.bookmark === false) {
                                                 item.bookmark = true;
                                             } else {
@@ -73,6 +80,7 @@ class JobCards extends React.Component {
                                             this.props.bookmarkHandler(item);
                                         }}>
                                             <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faBookmark} /> </Button>}
+                                    </div>
 
                                     <Card.Body>
                                         <Card.Title>{item.title}</Card.Title>
