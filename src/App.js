@@ -196,7 +196,9 @@ class App extends React.Component {
       <>
         <Router>
 
-          <Header />
+          {/* <IsLoadingAndError> */}
+          {isAuthenticated&&<Header />}
+
           <Switch>
             <Route exact path="/">
 
@@ -224,7 +226,9 @@ class App extends React.Component {
           
           </Switch>
 
-          <Footer />
+          {isAuthenticated&&<Footer />}
+          
+          {/* </IsLoadingAndError> */}
 
         </Router>
 
