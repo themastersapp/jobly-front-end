@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-// import IsLoadingAndError from './IsLoadingAndError';
 import Footer from './Footer';
 import { withAuth0 } from "@auth0/auth0-react";
 import Profile from './profile';
@@ -10,17 +9,12 @@ import JobForm from './form';
 import JobCards from './jobcards';
 import Applcations from './Applcations';
 
-// import Carousel from 'react-bootstrap/Carousel';
-
-
-// import './style.css'
 
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
 } from "react-router-dom";
 import axios from 'axios';
 import Bookmark from './Bookmark';
@@ -58,7 +52,7 @@ class App extends React.Component {
   }
 
   bookmarkHandler = async (bookmarked) => {
-    console.log('bookmarked', bookmarked);
+    // console.log('bookmarked', bookmarked);
     const { user } = this.props.auth0;
     let bookMarkData = {
       bookmarked: bookmarked,
@@ -88,7 +82,7 @@ class App extends React.Component {
   }
 
   extractApplication = async (application) => {
-    console.log('WORKING', application);
+    // console.log('WORKING', application);
     await this.setState({
       appliedApplication :application,
     })
@@ -108,19 +102,19 @@ class App extends React.Component {
       major: event.target.major.value,
       bio: event.target.bio.value,
     }
-    console.log('applicationData', applicationData);
+    // console.log('applicationData', applicationData);
 
     let sendApplication = await axios.post('http://localhost:3001/applications', applicationData);
 
     await this.setState({
       sentApplication: sendApplication.data,
     })
-    console.log('applicationData', this.state);
+    // console.log('applicationData', this.state);
 
   }
 
   activeFunc=async(item)=>{
-    console.log({item})
+    // console.log({item})
 
     let putActive= await axios.put('http://localhost:3001/applications', item);
     this.setState({
@@ -159,27 +153,12 @@ class App extends React.Component {
 
   }
 
-  // async componentDidMount(){
-  //   const {isAuthenticated}=this.props.auth0;
-  //   console.log('befor from didmount');
-  //   console.log(isAuthenticated);
-
-  //    if( isAuthenticated){
-  //     console.log('from didmount');
-  //     const {user} = this.props.auth0
-  //     await this.setState({
-  //       user:user
-  //     })
-  //     let checkData=await axios.get('http://localhost:3001/checkdata',this.state.user.email)
-  //   }
-  // }
-
    componentDidUpdate=async(prevProps, prevState) =>{
     const {isAuthenticated}=this.props.auth0;
 
     if( (Object.keys(this.state.user).length) === 0 ){
       if(isAuthenticated){
-        console.log('componentDidUpdate');
+        // console.log('componentDidUpdate');
         const {user} = this.props.auth0
         
         await this.setState({
@@ -207,38 +186,35 @@ class App extends React.Component {
   render() {
     // console.log(this.state.user);
     let myData=(this.state.retrieveProfile.length);
-    console.log('mmmmmmmmmmmm',myData);
+    // console.log('mmmmmmmmmmmm',myData);
     
-    console.log('xxxxxxxxxxxxxx',this.state.showcard);
+    // console.log('xxxxxxxxxxxxxx',this.state.showcard);
 
     const { isAuthenticated } = this.props.auth0;
-    console.log('app', this.props);
+    // console.log('app', this.props);
     return (
       <>
         <Router>
-          {/* <IsLoadingAndError> */}
+
           <Header />
           <Switch>
             <Route exact path="/">
-              {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
+
               {/* {isAuthenticated ? <Redirect to="/profile" /> : <Login />} */}
               {!(isAuthenticated) ? <Login /> :(myData === 0 )? <Profile retrieveProfile={this.state.retrieveProfile} submittProfileData={this.submittProfileData}/> :(myData !== 0 )?   
-             <> <Carousels/> <JobForm Jobresults={this.Jobresults}  />{(this.state.showcard==true)&& <JobCards bookmarkedJobs={this.state.bookmarkedJobs} retrieveProfile={this.state.retrieveProfile} JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} applicationHandler={this.applicationHandler} extractApplication={this.extractApplication}/>}</>:null}
+             <> <Carousels/> <JobForm Jobresults={this.Jobresults}  />{(this.state.showcard===true)&& <JobCards bookmarkedJobs={this.state.bookmarkedJobs} retrieveProfile={this.state.retrieveProfile} JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} applicationHandler={this.applicationHandler} extractApplication={this.extractApplication}/>}</>:null}
               
 
-              {/* {(isAuthenticated) ? (<Carousels />) : <Login />}
-              {isAuthenticated&&((Object.keys(this.state.user).length) === 0)&&(<Profile retrieveProfile={this.state.retrieveProfile} submittProfileData={this.submittProfileData}/>)}
-              {(isAuthenticated) && (<JobForm Jobresults={this.Jobresults} />)}
-              {(isAuthenticated) && this.state.showcard && (<JobCards bookmarkedJobs={this.state.bookmarkedJobs} retrieveProfile={this.state.retrieveProfile} JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} applicationHandler={this.applicationHandler} extractApplication={this.extractApplication}/>)} */}
 
             </Route>
 
-            {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
+
             <Route exact path="/profile">
             {(isAuthenticated) ? (<Profile retrieveProfile={this.state.retrieveProfile} submittProfileData={this.submittProfileData}/>): <Login />}
             </Route>
+
             <Route exact path="/bookmarks">
-              {(isAuthenticated)?<Bookmark bookmarkedJobs={this.state.bookmarkedJobs} bookmarkHandler={this.bookmarkHandler} />: <Login />}
+              {(isAuthenticated)?<Bookmark bookmarkedJobs={this.state.bookmarkedJobs} bookmarkHandler={this.bookmarkHandler} extractApplication={this.extractApplication} retrieveProfile={this.state.retrieveProfile} applicationHandler={this.applicationHandler}/>: <Login />}
             </Route>
 
             <Route exact path="/applications">
@@ -249,7 +225,7 @@ class App extends React.Component {
           </Switch>
 
           <Footer />
-          {/* </IsLoadingAndError> */}
+
         </Router>
 
       </>
