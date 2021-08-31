@@ -4,11 +4,14 @@ import Card from 'react-bootstrap/Card';
 import './Login.css';
 import LoginButton from './loginbutton'
 import Carousel from 'react-bootstrap/Carousel'
+import LoginTempJs from './logintemplate'
+
 
 class Login extends React.Component {
   render() {
     return(
       <div >
+{/*         
 { <Carousel fade className="corousalCont">
   <Carousel.Item interval={1500}>
     <img 
@@ -52,10 +55,10 @@ class Login extends React.Component {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-       }
+       } */}
 
 
-
+<LoginTempJs/>
 
 
       <Card className="MyCard" style={{ width: '18rem' }}>

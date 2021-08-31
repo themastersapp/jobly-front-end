@@ -217,7 +217,7 @@ class App extends React.Component {
       <>
         <Router>
           {/* <IsLoadingAndError> */}
-          <Header />
+          {isAuthenticated&&<Header />}
           <Switch>
             <Route exact path="/">
               {/* TODO: if the user is logged in, render the `BestBooks` component, if they are not, render the `Login` component */}
@@ -247,8 +247,9 @@ class App extends React.Component {
             </Route>
           
           </Switch>
+          {isAuthenticated&&<Footer />}
 
-          <Footer />
+          
           {/* </IsLoadingAndError> */}
         </Router>
 
