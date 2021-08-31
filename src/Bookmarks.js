@@ -7,8 +7,6 @@ import Col from 'react-bootstrap/Col'
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PopoutCard from './PopoutCard';
-import ApplicationModal from './ApplicationModal';
-
 import './style.css'
 
 class Bookmarks extends React.Component {
@@ -18,8 +16,6 @@ class Bookmarks extends React.Component {
             showModal: false,
             popupCard: {},
             popItem: {},
-            applicationItem: {},
-            showApplication: false,
         }
     }
 
@@ -35,52 +31,30 @@ class Bookmarks extends React.Component {
         })
     }
 
-    handleApplicationClose = () => {
-        this.setState({
-            showApplication: false,
-        })
-    }
-    
     bookmarkHandler = async (item) => {
         await this.props.bookmarkHandler(item);
 
-    }
-
-    handleApplicationhow = (item) => {
-        this.props.extractApplication(item);
-        this.setState({
-            showApplication: true,
-            applicationItem: item,
-        })
     }
 
     render() {
 
         return (
             <>
-                <Row xs={1} md={3} className="g-4">
+                <Row xs={1} md={2} className="g-4">
                     {this.props.bookmarkedJobs.map((item, index) => {
                         if (item.bookmark === true) {
                             return (
-                                <Col key={index} className="jobCardsCol">
-                                    <Card className="bookmarkCards" style={{ width: '28rem' }}>
-
-                                        <div className="card-custom-img">
-                                            <Card.Img className="card-custom-img" variant="top" src="https://thumbs.gfycat.com/AdorableLonelyKilldeer-size_restricted.gif" />
-                                        </div>
-
-                                        <div className="card-custom-avatar">
-                                            <button className={item.bookmark ? "bookMarkButtonActive" : "bookMarkButtonInactive"} onClick={() => {
-                                                if (item.bookmark === false) {
-                                                    item.bookmark = true;
-                                                } else {
-                                                    item.bookmark = false;
-                                                }
-                                                this.bookmarkHandler(item);
-                                            }}> <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faTrash} />
-                                            </button>
-                                        </div>
-
+                                <Col key={index}>
+                                    <Card className="bookmarkCards" style={{ width: '56rem' }}>
+                                        <Button variant="Light" className={item.bookmark ? "bookMarkButtonActive" : "bookMarkButtonInactive"} onClick={() => {
+                                            if (item.bookmark === false) {
+                                                item.bookmark = true;
+                                            } else {
+                                                item.bookmark = false;
+                                            }
+                                            this.bookmarkHandler(item);
+                                        }}> <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faTrash} />
+                                        </Button>
 
                                         <Card.Body>
 
@@ -102,9 +76,6 @@ class Bookmarks extends React.Component {
                                             </Card.Text>
 
                                         </Card.Body>
-                                        <Button classname="applyButton" variant="primary" onClick={() => {
-                                            this.handleApplicationhow(item);
-                                        }}>Apply</Button>
                                     </Card>
                                 </Col>
                             )
@@ -113,9 +84,7 @@ class Bookmarks extends React.Component {
 
                 </Row>
 
-                <PopoutCard handleClose={this.handleClose} showModal={this.state.showModal} popItem={this.state.popItem} />
-                <ApplicationModal retrieveProfile={this.props.retrieveProfile} handleApplicationClose={this.handleApplicationClose} showApplication={this.state.showApplication} applicationItem={this.state.applicationItem} applicationHandler={this.props.applicationHandler} />
-
+                <PopoutCard handleClose={this.handleClose} showModal={this.state.showModal} popItem={this.state.popItem}/>
             </>
         )
     }

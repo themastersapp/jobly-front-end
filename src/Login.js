@@ -64,7 +64,7 @@ class Login extends React.Component {
           <Card.Text style={{fontSize:'30px',fontWeight:'bolder'}}>
             Click Below to Log In
           </Card.Text>
-
+          {/* TODO: add a `LoginButton` component here that will log the user in with Auth0 */}
           <LoginButton/>
         </Card.Body>
       </Card>

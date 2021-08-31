@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
 import './Header.css';
 import { withAuth0 } from "@auth0/auth0-react";
@@ -11,8 +12,15 @@ import { Card } from 'react-bootstrap';
 class Header extends React.Component {
   render() {
     return (
-   
-      
+      // <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      //   <Navbar.Brand>My Favorite Books</Navbar.Brand>
+      //   <Link to="/">Home</Link>
+      //   <Link to="/profile">Profile</Link>
+      //   <Link to="/bookmarks">Bookmarks</Link>
+
+      //   {/* TODO: if the user is logged in, render the `LogoutButton` - if the user is logged out, render the `LoginButton` */}
+      //   {(this.props.auth0.isAuthenticated) ? <LogoutButton/>:<LoginButton/>}
+      // </Navbar>
       <>
 
         <div className="header">
@@ -21,16 +29,16 @@ class Header extends React.Component {
           <div className="inner-header flex">
             {/* <!--Just the logo.. Don't mind this--> */}
             <div className="logContaner">
-              <Card.Img variant="top" style={{ width: '100px', height: '100px' }} src="https://cdn.discordapp.com/attachments/880434007140085811/881454520499077120/LogoTie.png" />
+              <Card.Img variant="top" style={{ width: '130px', height: '100px' }} src="https://cdn.discordapp.com/attachments/880434007140085811/881454520499077120/LogoTie.png" />
 
             </div >
-
-
+            {/* <img src={}/> */}
+            {/* <div classNames="linkContaner"> */}
             <Link  classNames="linkContaner" to="/">Home</Link>
             <Link  classNames="linkContaner" to="/profile">Profile</Link>
             <Link  classNames="linkContaner" to="/bookmarks">Bookmarks</Link>
             <Link  classNames="linkContaner" to="/applications">Applications</Link>
-
+{/* </div> */}
             <div className="fill">
               {(this.props.auth0.isAuthenticated) ? <LogoutButton /> : <LoginButton />}
             </div>

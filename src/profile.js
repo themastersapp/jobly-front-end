@@ -10,11 +10,11 @@ const Profile = (props) => {
     return <div>Loading ...</div>;
   }
 
-  // {console.log(props.retrieveProfile)}
+  {console.log(props.retrieveProfile)}
   return (
     isAuthenticated && (
-      <Card  style={{ width: '64rem' }} class="card card-custom bg-white border-white border-0">
-      <div className="profileCard">
+      <Card style={{ width: '64rem' }} class="card card-custom bg-white border-white border-0">
+      <div>
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>

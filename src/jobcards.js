@@ -34,12 +34,7 @@ class JobCards extends React.Component {
         })
     }
 
-    handleApplicationClose = () => {
-        this.setState({
-            showApplication: false,
-        })
-    }
-    
+
     handleApplicationClose = () => {
         this.setState({
             showApplication: false,
@@ -76,7 +71,7 @@ class JobCards extends React.Component {
 
                                     <div className="card-custom-avatar">
                                         {!item.bookmark &&
-                                        <button  className={item.bookmark ? "bookMarkButtonActive img-fluid" : "bookMarkButtonInactive img-fluid"} onClick={() => {
+                                        <Button  variant="Light" className={item.bookmark ? "bookMarkButtonActive img-fluid" : "bookMarkButtonInactive img-fluid"} onClick={() => {
                                             if (item.bookmark === false) {
                                                 item.bookmark = true;
                                             } else {
@@ -84,7 +79,7 @@ class JobCards extends React.Component {
                                             }
                                             this.props.bookmarkHandler(item);
                                         }}>
-                                            <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faBookmark} /> </button>}
+                                            <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faBookmark} /> </Button>}
                                     </div>
 
                                     <Card.Body>
@@ -107,10 +102,10 @@ class JobCards extends React.Component {
 
                                             </ListGroup>
                                         </Card.Text>
-                                    </Card.Body>
-                                        <Button  classname ="applyButton" variant="primary" onClick={() => {
+                                        <Button variant="primary" onClick={() => {
                                             this.handleApplicationhow(item);
                                         }}>Apply</Button>
+                                    </Card.Body>
                                 </Card>
                             </Col>
                         )

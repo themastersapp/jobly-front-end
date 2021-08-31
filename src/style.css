@@ -8,7 +8,7 @@
     padding: 20px;
 
 }
-.myform Label{
+Label{
 position: relative;
 left: 42%;
 font-size: 24px;
@@ -23,43 +23,23 @@ font-weight: bolder;
 }
 
 /* PROFILE FORM */
-
 .profileForm {
 width: 56rem;
 margin: auto;
 min-height: 40vh;
-padding: 5%;
 clear: both;
-}
-.profileForm .form-label{
-    float: left;
-    font-size: 18px;
-    font-weight: bolder;
-    margin-top: 20px;
 
 }
+.profileForm label{
+float: left;
+}
 
-.profileForm input, .formTextArea{
+.profileForm input[type=text], input[type=number]{
 background-color: rgba(209, 209, 209, 0.3);
 }
 
-.profileForm input:focus, .formTextArea:focus{
+.profileForm input[type=text]:focus, input[type=number]:focus{
     background-color: white;
-}
-
-.profileFormButton{
-    margin-top: 50px;
-    width: 100%;
-}
-
-.profileCard{
-margin-top: 75px;
-margin-bottom: 50px;
-line-height: 25px;
-}
-
-.profileAlert{
-    margin-top: 30px;
 }
 
 /* /PROFILE FORM */
@@ -77,48 +57,45 @@ line-height: 25px;
 
 .bookMarkButtonActive{
     position: relative;
-    bottom: 200px; 
+    /* display: inline; */
+    top: 50px; 
+    left:1%; 
+    width: 50px;
+    font-size: 32px;
+    border:  none;
+    color: transparent;
+}
+
+
+.bookMarkButtonInactive{
+    position: relative;
+    /* display: inline; */
+    bottom: 352px; 
     display: inline-block;
     margin-bottom: -332px;
     right: 200px; 
     font-size: 32px;
     border:  none;
     color: transparent;
-    background: none;
-
-}
-
-
-.bookMarkButtonInactive{
-    position: relative;
-    bottom: 200px; 
-    display: inline-block;
-    margin-bottom: -200px;
-    right: 200px; 
-    font-size: 32px;
-    border:  none;
-    color: transparent;
-    background: none;
-
 }
 
 
 .bookMarkIconActive{
-    opacity: 50%;
     border:  none;
-    color: white;
+    opacity: 20%;
+    color: red
 }
 
 .bookMarkIconActive:hover{
-    opacity: 70%;
+    opacity: 50%;
     transition:500ms;
     color: rgb(163, 105, 105)
 }
 
 .bookMarkIconActive:active{
-    opacity: 50%;
+    opacity: 90%;
     transition:500ms;
-    color: red
+    color: grey
 }
 
 .bookMarkIconInctive{
@@ -142,46 +119,18 @@ line-height: 25px;
 
 }
 
-.readmoreModalTitle{
-text-align: center;
-font-size: 24px;
-font-weight: bold;
-}
-.readmoreModal .modal-content{
-  right: 12.5rem;
-  width: 56rem;
-
-}
-
-.readmoreModalSubTitle{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.readmoreModalText{
-font-size: 18px;
-font-weight: 400;
-}
 /* JOB CARDS */
-
-
 .jobCardsCol{
-min-height: 750px;
+min-height: 700px;
 }
 
 .card-custom {
     overflow: hidden;
-   position: absolute;
-   min-height: 200px !important
+   
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+
   }
   
-  .card .card-body{
-   
-   min-height: 400px;
-   max-height: 400px;
-
-  }
-
   .card-custom-img {
     height: 200px;
     min-height: 200px;
@@ -222,34 +171,6 @@ min-height: 750px;
     height: 100px;
   }
   
-  /* Application */
-.applyButton{
-
-padding-top: 50px;
-}
-
-.applicationAlert{
-    display: inline-block;
-    margin-left: 10%;
-}
-
-.applicationModal .modal-content{
-    right: 12.5rem;
-    width: 56rem;
-}
-
-.applicationForm{
-    width: 90%;
-    margin: auto;
-}
-
-.applicationFormLabels{
-    font-size: 18px;
-    
-}
-/* /Application */
-
-
 
 
 /* /JOB CARDS */
@@ -492,5 +413,3 @@ h1, h2, h3, h4, h5, h6 {
 footer{
     /* margin-top: 50vh; */
 }
-
-
