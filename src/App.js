@@ -196,15 +196,12 @@ class App extends React.Component {
       <>
         <Router>
 
-          {/* <IsLoadingAndError> */}
-          {isAuthenticated&&<Header />}
-
           <Switch>
             <Route exact path="/">
 
               {/* {isAuthenticated ? <Redirect to="/profile" /> : <Login />} */}
               {!(isAuthenticated) ? <Login /> :(myData === 0 )? <Profile retrieveProfile={this.state.retrieveProfile} submittProfileData={this.submittProfileData}/> :(myData !== 0 )?   
-             <> <Carousels/> <JobForm Jobresults={this.Jobresults}  />{(this.state.showcard===true)&& <JobCards bookmarkedJobs={this.state.bookmarkedJobs} retrieveProfile={this.state.retrieveProfile} JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} applicationHandler={this.applicationHandler} extractApplication={this.extractApplication}/>}</>:null}
+             <> <Header /> <Carousels/> <JobForm Jobresults={this.Jobresults}  />{(this.state.showcard===true)&& <JobCards bookmarkedJobs={this.state.bookmarkedJobs} retrieveProfile={this.state.retrieveProfile} JobResults={this.state.JobData} bookmarkHandler={this.bookmarkHandler} applicationHandler={this.applicationHandler} extractApplication={this.extractApplication}/>}   <Footer /></>:null}
               
 
 
@@ -212,23 +209,19 @@ class App extends React.Component {
 
 
             <Route exact path="/profile">
-            {(isAuthenticated) ? (<Profile retrieveProfile={this.state.retrieveProfile} submittProfileData={this.submittProfileData}/>): <Login />}
+            {(isAuthenticated) ? ( <> <Header /> <Profile retrieveProfile={this.state.retrieveProfile} submittProfileData={this.submittProfileData}/>   <Footer /></>): <Login />}
             </Route>
 
             <Route exact path="/bookmarks">
-              {(isAuthenticated)?<Bookmark bookmarkedJobs={this.state.bookmarkedJobs} bookmarkHandler={this.bookmarkHandler} extractApplication={this.extractApplication} retrieveProfile={this.state.retrieveProfile} applicationHandler={this.applicationHandler}/>: <Login />}
+              {(isAuthenticated)? <> <Header /><Bookmark bookmarkedJobs={this.state.bookmarkedJobs} bookmarkHandler={this.bookmarkHandler} extractApplication={this.extractApplication} retrieveProfile={this.state.retrieveProfile} applicationHandler={this.applicationHandler}/>   <Footer /></>: <Login />}
             </Route>
 
             <Route exact path="/applications">
               
-              {isAuthenticated?<Applcations sentApplication={this.state.sentApplication} activeFunc={this.activeFunc}/>:<Login />}
+              {isAuthenticated?<> <Header /><Applcations sentApplication={this.state.sentApplication} activeFunc={this.activeFunc}/>   <Footer /></>:<Login />}
             </Route>
           
           </Switch>
-
-          {isAuthenticated&&<Footer />}
-          
-          {/* </IsLoadingAndError> */}
 
         </Router>
 

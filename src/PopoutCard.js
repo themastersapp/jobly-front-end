@@ -50,4 +50,3 @@ class PopoutCard extends React.Component {
 }
 
 export default PopoutCard;
-

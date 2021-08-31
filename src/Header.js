@@ -59,7 +59,7 @@ class Header extends React.Component {
 
         {/* <!--Content starts--> */}
         <div className="content flex">
-          {/* <p>Daniel Österman | 2019 | Free to use
+          {/* <p>Daniel Österman | 2019 | Free to use
   | CREDIT TO GOODKATZ</p> */}
         </div>
         {/* <!--Content ends--> */}

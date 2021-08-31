@@ -13,7 +13,9 @@ $clr-accent: #93f8e0;
   box-sizing: border-box;
 }
 
-body {
+
+.loginBody {
+
   font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
   color: $clr-text-main;
@@ -47,7 +49,9 @@ p {
   // align-items: center;
   // min-height: 60em;
   border-radius: 20px;
-  background-color: $clr-bg-box;
+
+  background-color: rgba(255,255,255,.8);
+
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.025);
 }
@@ -119,11 +123,54 @@ p {
   }
 }
 
-form {
+.loginButton {
+  color: white;
+  background-color: rgba(82, 87, 240, 0.9);
+  width: 100%;
+  padding: 1.5em 2em;
+  border: 1px solid rgba(58, 64, 235, 0.9);
+  border-radius: 5px ;
+
+  &.input-email,
+  &.input-password {
+    background-repeat: no-repeat;
+    background-position: right 1em top 1.25em;
+  }
+
+  &.input-email {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="lightgrey" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="4"></circle><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path></svg>');
+  }
+
+  &.input-password {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="lightgrey" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="5" y="11" width="14" height="10" rx="2"></rect><circle cx="12" cy="16" r="1"></circle><path d="M8 11v-4a4 4 0 0 1 8 0v4"></path></svg>');
+  }
+  &:hover {
+    transition: 500ms;
+    background-color: rgba(82, 87, 240, 0.7);
+    border: 1px solid rgba(58, 64, 235, 0.9) ;
+
+  }
+  &:active {
+    transition: 500ms;
+    background-color: rgba(9, 17, 255, 0.75);
+    border: 1px solid rgba(58, 64, 235, 0.9) ;
+
+  }
+
+  &:focus {
+    outline-color: $clr-bg-quote;
+    border-color: $clr-bg-quote;
+  }
+}
+.loginForm {
+
+  
   & > div {
     position: relative;
     padding: 1.5em 0;
 
+
+    
     button {
       color: $clr-text-main;
       width: 100%;
@@ -151,6 +198,7 @@ form {
       }
     }
 
+    
     label {
       font-size: 0.85em;
       position: absolute;
@@ -242,26 +290,29 @@ form {
   padding: 1em 0;
   position: relative;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -4.5em;
-    left: -0.65em;
-    width: 3.5em;
-    height: 3.5em;
-    background-color: $clr-accent;
-    border-radius: 100%;
-  }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 15px;
-    height: 100%;
-    width: 2px;
-    background-color: rgba($clr-bg-box, 0.25);
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: -4.5em;
+  //   left: -0.65em;
+  //   width: 3.5em;
+  //   height: 3.5em;
+  //   background-color: $clr-accent;
+  //   border-radius: 100%;
+  // }
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 15px;
+  //   height: 100%;
+  //   width: 2px;
+  //   background-color: rgba($clr-bg-box, 0.25);
+  // }
+
+  
 }
 
 .quote {
