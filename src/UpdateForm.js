@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
+import Alert from 'react-bootstrap/Alert';
+import './style.css';
 
 class UpdateForm extends Component {
 
@@ -8,7 +10,7 @@ class UpdateForm extends Component {
     if (this.props.retrieveProfile.length > 0) {
       return (
         <div>
-          <Form onSubmit={this.props.submittProfileData}>
+          <Form onSubmit={this.props.submittProfileData} className="profileForm">
             <Form.Group className="mb-3" controlId="formBasicPhone Number">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control type="number" placeholder="Enter Phone Number" name='phoneNumber' defaultValue={this.props.retrieveProfile[0].phoneNumber} />
@@ -50,8 +52,10 @@ class UpdateForm extends Component {
     } else {
       return (
         <div>
-
-          <Form onSubmit={this.props.submittProfileData}>
+          <Alert variant='primary'>
+            Please fill-in your preferences to get started!
+          </Alert>
+          <Form onSubmit={this.props.submittProfileData} className="profileForm">
             <Form.Group className="mb-3" controlId="formBasicPhone Number">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control type="number" placeholder="Enter Phone Number" name='phoneNumber' />
@@ -64,12 +68,12 @@ class UpdateForm extends Component {
 
             <Form.Group className="mb-3" controlId="formBasicMajor">
               <Form.Label>Major</Form.Label>
-              <Form.Control type="text" placeholder="Major" name='major'/>
+              <Form.Control type="text" placeholder="Major" name='major' />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicSkills">
               <Form.Label>Skills</Form.Label>
-              <Form.Control type="text" placeholder="Skills" name='skills'  />
+              <Form.Control type="text" placeholder="Skills" name='skills' />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicExperience">
@@ -79,7 +83,7 @@ class UpdateForm extends Component {
 
             <Form.Group className="mb-3" controlId="formBasicBio">
               <Form.Label>Bio</Form.Label>
-              <Form.Control type="text" placeholder="Bio" name='bio'  />
+              <Form.Control type="text" placeholder="Bio" name='bio' />
             </Form.Group>
 
             <Button variant="primary" type="submit">

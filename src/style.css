@@ -21,11 +21,34 @@ font-weight: bolder;
     border-radius: 30px;
 
 }
+
+/* PROFILE FORM */
+.profileForm {
+width: 56rem;
+margin: auto;
+min-height: 40vh;
+clear: both;
+
+}
+.profileForm label{
+float: left;
+}
+
+.profileForm input[type=text], input[type=number]{
+background-color: rgba(209, 209, 209, 0.3);
+}
+
+.profileForm input[type=text]:focus, input[type=number]:focus{
+    background-color: white;
+}
+
+/* /PROFILE FORM */
+
+
 .myCarousel{
    width: 80%;
    margin: auto; 
    margin-top: 30px;
-
 }
 
 .bookmarkCards{
@@ -47,9 +70,10 @@ font-weight: bolder;
 .bookMarkButtonInactive{
     position: relative;
     /* display: inline; */
-    top: 50px; 
-    left:1%; 
-    width: 50px;
+    bottom: 352px; 
+    display: inline-block;
+    margin-bottom: -332px;
+    right: 200px; 
     font-size: 32px;
     border:  none;
     color: transparent;
@@ -75,25 +99,81 @@ font-weight: bolder;
 }
 
 .bookMarkIconInctive{
-    opacity: 20%;
+    opacity: 50%;
     border:  none;
-    color: grey;
+    color: white;
 }
 
 .bookMarkIconInctive:hover{
-    opacity: 50%;
+    opacity: 75%;
     transition:500ms;
-    color: rgb(131, 131, 131)
+    color: white;
 }
 
 .bookMarkIconInctive:active{
     opacity: 90%;
     border:  none;
     transition:500ms;
-    color: red;
+    color: purple;
 
 
 }
+
+/* JOB CARDS */
+.jobCardsCol{
+min-height: 700px;
+}
+
+.card-custom {
+    overflow: hidden;
+   
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+
+  }
+  
+  .card-custom-img {
+    height: 200px;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-color: inherit;
+  }
+  
+  /* First border-left-width setting is a fallback */
+  .card-custom-img::after {
+    position: absolute;
+    content: '';
+    top: 161px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-top-width: 40px;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 545px;
+    border-left-width:29rem;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: white;
+  }
+  
+  .card-custom-avatar img {
+    
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    position: absolute;
+    top: 100px;
+    left: 1.25rem;
+    width: 100px;
+    height: 100px;
+  }
+  
+
+
+/* /JOB CARDS */
 
 .popupCard{
 color: rgb(0,123,255);
