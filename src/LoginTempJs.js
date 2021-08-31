@@ -86,10 +86,12 @@ class LoginTempJs extends React.Component {
                                     <div class="quote-small">
                                         Jobly is a middle ware website used mainly to connect your clients professionally with companies around the world to get the job which our clients dream about, this platform is characterized by a fast application process with easy-used features,  Jobly is firmly committed to the region and has an excellent understanding of the Middle East and business landscape. Our Mission is connecting job seekers with employers looking to hire. Everyday hundreds of new job vacancies posted to empower people with the tools and knowledge to build their lifestyles of choice.
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="area" >
                     <ul class="circles">

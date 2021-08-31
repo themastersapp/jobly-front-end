@@ -196,7 +196,6 @@ class App extends React.Component {
       <>
         <Router>
 
-          
           <Switch>
             <Route exact path="/">
 
@@ -223,8 +222,6 @@ class App extends React.Component {
             </Route>
           
           </Switch>
-
-        
 
         </Router>
 
