@@ -1,7 +1,6 @@
 /* a{
   color:#fff;
 }
-
 a:hover{
   color:darkgrey;
 } */
@@ -63,9 +62,11 @@ LoginButton{
 } */
 
 /* Fill button styling */
+
+/* LOGIN AND HEADER */
 .fill button {
   font-size: 17px;
-  /* font-weight: 200; */
+
   color:white;
   width: 200px;
   height: 70px;
@@ -74,14 +75,37 @@ LoginButton{
   outline: 0;
   font-size: 15px;
   font-weight: bold;
-  border: 3px solid white;
-  /* cursor: pointer; */
+  border: 3px solid rgba(255, 255, 255, 0.75);
+
   margin-left: 8rem;
   position: relative;
-  top: 1rem;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
+
+.fill button:hover {
+  height: 80px;
+  width: 210px;
+
+  transition: 500ms;
+  background-color: rgba(235, 235, 235, 0.4);
+  border: 3px solid rgb(255, 255, 255);
+
+}
+
+.fill button:active {
+  width: 200px;
+  height: 70px;
+  background-color: rgba(200 , 200, 200, 0.25);
+
+}
+
+
+/* /LOGIN AND HEADER */
+
+
+
 .logContaner{
+  
   padding-left: 3ch;
   position: relative;
   right: 6%;
