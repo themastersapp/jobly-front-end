@@ -31,11 +31,11 @@ class Footer extends React.Component {
                   <div className="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" >
                     <h3 className="f-title f_600 t_color f_size_18">Site Map</h3>
                     <ul className="list-unstyled f_list">
-                      <li><Link classNames="linkContaner" to="/">Home</Link></li>
-                      <li><Link  classNames="linkContaner" to="/profile">Profile</Link></li>
-                      <li><Link  classNames="linkContaner" to="/bookmarks">Bookmarks</Link></li>
-                      <li><Link  classNames="linkContaner" to="/applications">Applications</Link></li>
-                      <li><Link  classNames="linkContaner" to="/AboutUs">About Us</Link></li>
+                      <li><Link className="linkContaner" to="/">Home</Link></li>
+                      <li><Link  className="linkContaner" to="/profile">Profile</Link></li>
+                      <li><Link  className="linkContaner" to="/bookmarks">Bookmarks</Link></li>
+                      <li><Link  className="linkContaner" to="/applications">Applications</Link></li>
+                      <li><Link  className="linkContaner" to="/AboutUs">About Us</Link></li>
 
                     </ul>
                   </div>

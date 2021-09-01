@@ -26,12 +26,12 @@ class Header extends React.Component {
 
 
             <Card.Img variant="top" style={{ width: '100px', height: '100px' }} src="https://cdn.discordapp.com/attachments/880434007140085811/881454520499077120/LogoTie.png" />
-            <Link classNames="linkContaner" to="/"> <span className='headerLinks'> Home</span> </Link>
-            <Link classNames="linkContaner" to="/profile"> <span className='headerLinks'>Profile</span></Link>
-            <Link classNames="linkContaner" to="/bookmarks"> <span className='headerLinks'>Bookmarks</span></Link>
-            <Link classNames="linkContaner" to="/applications"> <span className='headerLinks'>Applications</span></Link>
-            <Link classNames="linkContaner" to="/AboutUs"> <span className='headerLinks'>About Us</span></Link>
-            {/* <Link  classNames="linkContaner" to="/TestAboutUS2.js">AboutUs2</Link> */}
+            <Link className="linkContaner" to="/"> <p className='headerLinks'> Home</p> </Link>
+            <Link className="linkContaner" to="/profile"> <p className='headerLinks'>Profile</p></Link>
+            <Link className="linkContaner" to="/bookmarks"> <p className='headerLinks'>Bookmarks</p></Link>
+            <Link className="linkContaner" to="/applications"> <p className='headerLinks'>Applications</p></Link>
+            <Link className="linkContaner" to="/AboutUs"> <p className='headerLinks'>About Us</p></Link>
+
 
             <div className="fill">
               {(this.props.auth0.isAuthenticated) ? <LogoutButton /> : <LoginButton />}
@@ -43,13 +43,13 @@ class Header extends React.Component {
             <svg className="waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
               <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                <path id="gentleWave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
               </defs>
               <g className="parallax">
-                <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
+                <use xlinkHref="#gentleWave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlinkHref="#gentleWave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlinkHref="#gentleWave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlinkHref="#gentleWave" x="48" y="7" fill="#fff" />
 
               </g>
             </svg>
