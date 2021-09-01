@@ -68,11 +68,6 @@ line-height: 25px;
 .myCarousel{
    width: 80%;
    margin: auto; 
-   margin-top: 30px;
-}
-
-.bookmarkCards{
-    /* margin: auto; */
 }
 
 .bookMarkButtonActive{
@@ -170,7 +165,7 @@ font-weight: 400;
 
 
 .jobCardsCol{
-min-height: 750px;
+min-height: 850px;
 }
 
 .card-custom {
@@ -182,7 +177,7 @@ min-height: 750px;
   .card .card-body{
    
    min-height: 400px;
-   max-height: 400px;
+   max-height: 600px;
 
   }
 
