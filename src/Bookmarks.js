@@ -56,76 +56,81 @@ class Bookmarks extends React.Component {
     }
 
     render() {
-        if(this.props.bookmarkedJobs.length === 0) {
+        if (this.props.bookmarkedJobs.length === 0) {
             return (
-                <Alert className="emptyAlert" variant='primary'>
-                Your bookmarks page is empty.
-              </Alert>
+                <>
+                    <h2 className="pageTitle">Bookmarks</h2>
+                    <Alert style={{marginBottom:'10%'}} className="emptyAlert" variant='primary'>
+                        Your bookmarks page is empty.
+                    </Alert>
+                </>
             )
         } else
-        return (
+            return (
 
-            <>
-                <Row xs={1} md={3} className="g-4">
-                    {this.props.bookmarkedJobs.map((item, index) => {
-                        if (item.bookmark === true) {
-                            return (
-                                <Col key={index} className="jobCardsCol">
-                                    <Card className="bookmarkCards" style={{ width: '28rem' }}>
+                <>
+                    <h2 className="pageTitle">Bookmarks</h2>
 
-                                        <div className="card-custom-img">
-                                            <Card.Img className="card-custom-img" variant="top" src="https://thumbs.gfycat.com/AdorableLonelyKilldeer-size_restricted.gif" />
-                                        </div>
+                    <Row xs={1} md={3} className="g-4">
+                        {this.props.bookmarkedJobs.map((item, index) => {
+                            if (item.bookmark === true) {
+                                return (
+                                    <Col key={index} className="jobCardsCol">
+                                        <Card className="bookmarkCards" id="jobCardsShadow" style={{ width: '28rem' }}>
 
-                                        <div className="card-custom-avatar">
-                                            <button className={item.bookmark ? "bookMarkButtonActive" : "bookMarkButtonInactive"} onClick={() => {
-                                                if (item.bookmark === false) {
-                                                    item.bookmark = true;
-                                                } else {
-                                                    item.bookmark = false;
-                                                }
-                                                this.bookmarkHandler(item);
-                                            }}> <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faTrash} />
-                                            </button>
-                                        </div>
+                                            <div className="card-custom-img">
+                                                <Card.Img className="card-custom-img" variant="top" src="https://thumbs.gfycat.com/AdorableLonelyKilldeer-size_restricted.gif" />
+                                            </div>
+
+                                            <div className="card-custom-avatar">
+                                                <button className={item.bookmark ? "bookMarkButtonActive" : "bookMarkButtonInactive"} onClick={() => {
+                                                    if (item.bookmark === false) {
+                                                        item.bookmark = true;
+                                                    } else {
+                                                        item.bookmark = false;
+                                                    }
+                                                    this.bookmarkHandler(item);
+                                                }}> <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faTrash} />
+                                                </button>
+                                            </div>
 
 
-                                        <Card.Body>
+                                            <Card.Body>
 
-                                            <Card.Title>{item.title}</Card.Title>
+                                                <Card.Title>{item.title}</Card.Title>
 
-                                            <Card.Text>
-                                                <ListGroup>
+                                                <Card.Text>
+                                                    <ListGroup>
 
-                                                    <ListGroup.Item>{item.description.split(' ').splice(0, 20).join(' ')}
-                                                        <Button variant="Light" size="sm" onClick={() => { this.handleShow(item) }} className="popupCard">
-                                                            ..Read More
-                                                        </Button>{' '}
-                                                    </ListGroup.Item>
-                                                    <ListGroup.Item>{item.company_name}</ListGroup.Item>
-                                                    <ListGroup.Item>{item.via}</ListGroup.Item>
-                                                    <ListGroup.Item>{item.post_date}</ListGroup.Item>
+                                                        <ListGroup.Item>{item.description.split(' ').splice(0, 20).join(' ')}
+                                                            <Button variant="Light" size="sm" onClick={() => { this.handleShow(item) }} className="popupCard">
+                                                                ..Read More
+                                                            </Button>{' '}
+                                                        </ListGroup.Item>
+                                                        <ListGroup.Item>{item.company_name}</ListGroup.Item>
+                                                        <ListGroup.Item>{item.via}</ListGroup.Item>
+                                                        <ListGroup.Item>{item.post_date}</ListGroup.Item>
 
-                                                </ListGroup>
-                                            </Card.Text>
+                                                    </ListGroup>
+                                                </Card.Text>
 
-                                        </Card.Body>
-                                        <Button classname="applyButton" variant="primary" onClick={() => {
-                                            this.handleApplicationhow(item);
-                                        }}>Apply</Button>
-                                    </Card>
-                                </Col>
-                            )
-                        }
-                    })}
+                                            </Card.Body>
+                                            <Button id="applyButton" variant="primary" onClick={() => {
+                                                this.handleApplicationhow(item);
+                                            }}>Apply</Button>
+                                        </Card>
+                                    </Col>
+                                )
+                            }
+                        })}
 
-                </Row>
+                    </Row>
 
-                <PopoutCard handleClose={this.handleClose} showModal={this.state.showModal} popItem={this.state.popItem} />
-                <ApplicationModal retrieveProfile={this.props.retrieveProfile} handleApplicationClose={this.handleApplicationClose} showApplication={this.state.showApplication} applicationItem={this.state.applicationItem} applicationHandler={this.props.applicationHandler} />
+                    <PopoutCard handleClose={this.handleClose} showModal={this.state.showModal} popItem={this.state.popItem} />
+                    <ApplicationModal retrieveProfile={this.props.retrieveProfile} handleApplicationClose={this.handleApplicationClose} showApplication={this.state.showApplication} applicationItem={this.state.applicationItem} applicationHandler={this.props.applicationHandler} />
 
-            </>
-        )
+                </>
+            )
     }
 }
 

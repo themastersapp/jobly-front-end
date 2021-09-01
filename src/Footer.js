@@ -21,7 +21,10 @@ class Footer extends React.Component {
                 <div className="col-lg-3 col-md-6">
                   <div className="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style={{ visibility: 'visible', animationDelay: '0.2s', animationName: 'fadeInLeft' }}>
                     <h3 className="f-title f_600 t_color f_size_18">Get in Touch</h3>
-                    <p>Don’t miss any updates of our new templates and extensions.!</p>
+                    <p>contact us:</p>
+                    <p>info@jobly.com</p>
+                    <p>recruiter@jobly.com</p>
+                    <p>advertisement@jobly.com</p>
                   </div>
                 </div>
                 <div className="col-lg-3 col-md-6">
@@ -32,6 +35,8 @@ class Footer extends React.Component {
                       <li><Link  classNames="linkContaner" to="/profile">Profile</Link></li>
                       <li><Link  classNames="linkContaner" to="/bookmarks">Bookmarks</Link></li>
                       <li><Link  classNames="linkContaner" to="/applications">Applications</Link></li>
+                      <li><Link  classNames="linkContaner" to="/AboutUs">About Us</Link></li>
+
                     </ul>
                   </div>
                 </div>

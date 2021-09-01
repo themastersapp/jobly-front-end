@@ -111,12 +111,23 @@ LoginButton{
   right: 6%;
   top: 7%;
 }
-/* a .linkContaner{
-  position: absolute;
-  /* display: inline-block; */
-/* top: 400px; */
-/* } */ 
 
+.headerLinks{
+  opacity: 80%;
+  font-size: 22px;
+}
+.headerLinks:hover{
+  opacity: 100%;
+  transition: 300ms;
+  font-size: 22px;
+}
+
+.headerLinks:active{
+  opacity: 100%;
+
+  transition: 500ms;
+  font-size: 24px;
+}
 
 /* End of Fill Button  */
 

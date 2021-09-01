@@ -96,11 +96,11 @@ class UpdateForm extends Component {
               <Form.Control className="formTextArea" as="textarea" placeholder="Bio" name='bio' defaultValue={this.props.retrieveProfile[0].bio} required />
             </Form.Group>
 
-            <Button className="profileFormButton" variant="primary" type="submit" >
+            <Button  id="applyButton" className="profileFormButton" variant="primary" type="submit" style={{width:"300px"}}>
               Update
             </Button>
             {this.state.showSpinner &&
-              <Spinner className="profileAlert" animation="border" variant="primary" />
+              <Spinner className="profileAlert" animation="border" variant="primary" style={{display:'block', margin:'auto', marginTop:'50px'}}/>
             }
             {this.state.showFeedback &&
               <Alert className="profileAlert" variant='success'>
@@ -165,11 +165,11 @@ class UpdateForm extends Component {
               <Form.Control className="formTextArea" as="textarea" placeholder="Bio" name='bio' required />
             </Form.Group>
 
-            <Button className="profileFormButton" variant="primary" type="submit">
+            <Button id="applyButton" className="profileFormButton" variant="primary" type="submit" style={{width:"300px"}}>
               Submit
             </Button>
             {this.state.showSpinner &&
-              <Spinner className="profileAlert" animation="border" variant="primary" />
+              <Spinner className="profileAlert" animation="border" variant="primary" style={{display:'block', margin:'auto', marginTop:'50px'}}/>
             }
             {this.state.showFeedback &&
               <Alert className="profileAlert" variant='success'>

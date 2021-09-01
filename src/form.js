@@ -20,7 +20,7 @@ class JobForm extends React.Component {
                         <Form.Label className='formlabels'>Location</Form.Label>
                         <Form.Control className="forminputs" name="location" type="text" placeholder="Enter your city" required />
                     </Form.Group>
-                    <Button className='FormButton' variant="primary" type="submit">
+                    <Button id="applyButton" className='FormButton' variant="primary" type="submit" style={{width:'200px', marginLeft:'254px',  marginTop:'10px'}}>
                         Submit
                     </Button>
                 </Form>

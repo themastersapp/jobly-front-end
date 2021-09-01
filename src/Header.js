@@ -11,8 +11,8 @@ import { Card } from 'react-bootstrap';
 class Header extends React.Component {
   render() {
     return (
-   
-      
+
+
       <>
 
         <div className="header">
@@ -21,17 +21,17 @@ class Header extends React.Component {
           <div className="inner-header flex">
             {/* <!--Just the logo.. Don't mind this--> */}
             <div className="logContaner">
-              <Card.Img variant="top" style={{ width: '100px', height: '100px' }} src="https://cdn.discordapp.com/attachments/880434007140085811/881454520499077120/LogoTie.png" />
 
             </div >
 
 
-            <Link  classNames="linkContaner" to="/">Home</Link>
-            <Link  classNames="linkContaner" to="/profile">Profile</Link>
-            <Link  classNames="linkContaner" to="/bookmarks">Bookmarks</Link>
-            <Link  classNames="linkContaner" to="/applications">Applications</Link>
-            <Link  classNames="linkContaner" to="/AboutUs">AboutUs</Link> 
-               {/* <Link  classNames="linkContaner" to="/TestAboutUS2.js">AboutUs2</Link> */}
+            <Card.Img variant="top" style={{ width: '100px', height: '100px' }} src="https://cdn.discordapp.com/attachments/880434007140085811/881454520499077120/LogoTie.png" />
+            <Link classNames="linkContaner" to="/"> <span className='headerLinks'> Home</span> </Link>
+            <Link classNames="linkContaner" to="/profile"> <span className='headerLinks'>Profile</span></Link>
+            <Link classNames="linkContaner" to="/bookmarks"> <span className='headerLinks'>Bookmarks</span></Link>
+            <Link classNames="linkContaner" to="/applications"> <span className='headerLinks'>Applications</span></Link>
+            <Link classNames="linkContaner" to="/AboutUs"> <span className='headerLinks'>About Us</span></Link>
+            {/* <Link  classNames="linkContaner" to="/TestAboutUS2.js">AboutUs2</Link> */}
 
             <div className="fill">
               {(this.props.auth0.isAuthenticated) ? <LogoutButton /> : <LoginButton />}
@@ -61,9 +61,9 @@ class Header extends React.Component {
 
         {/* <!--Content starts--> */}
         {/* <div className="content flex"> </div> */}
-          {/* <p>Daniel Österman | 2019 | Free to use
+        {/* <p>Daniel Österman | 2019 | Free to use
   | CREDIT TO GOODKATZ</p> */}
-       
+
         {/* <!--Content ends--> */}
       </>
     );
