@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form, Button, Spinner, Alert } from "react-bootstrap";
 import { withAuth0 } from "@auth0/auth0-react";
 import './style.css';
+import { Redirect } from "react-router-dom";
 
 class UpdateForm extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class UpdateForm extends Component {
     this.state = {
       showFeedback: false,
       showSpinner: false,
+      redirect: false,
     }
   }
 
@@ -20,21 +22,22 @@ class UpdateForm extends Component {
     await this.setState({
       showSpinner: true,
     });
- 
+
 
 
     setTimeout(async () => {
-    await this.setState({
-      showSpinner: false,
-      showFeedback: true,
-    });
-  }, 1500);
+      await this.setState({
+        showSpinner: false,
+        showFeedback: true,
+      });
+    }, 1500);
 
 
     setTimeout(async () => {
 
       await this.setState({
         showFeedback: false,
+        redirect: true,
       });
       this.props.submittProfileData(event);
 
@@ -101,8 +104,13 @@ class UpdateForm extends Component {
             }
             {this.state.showFeedback &&
               <Alert className="profileAlert" variant='success'>
-                Profile information updated successfully!
+                Profile information updated successfully! You will be redirected shortly.
               </Alert>
+            }
+            {this.state.redirect && (
+              <Redirect push to = "/"></Redirect>
+            )
+
             }
           </Form>
         </div>
@@ -165,7 +173,7 @@ class UpdateForm extends Component {
             }
             {this.state.showFeedback &&
               <Alert className="profileAlert" variant='success'>
-                Profile was successfully created!
+                Profile was successfully created! You will be redirected shortly.
               </Alert>
             }
           </Form>
