@@ -67,7 +67,7 @@ class JobCards extends React.Component {
                         })
                         return (
                             <Col className="jobCardsCol" key={index}>
-                                <Card style={{ width: '28rem' }} id="jobCardsShadow" className="card card-custom bg-white border-white border-0">
+                                <Card style={{ width: '28rem' }} id="jobCardsShadow" class="card card-custom bg-white border-white border-0">
 
 
                                     <div className="card-custom-img">

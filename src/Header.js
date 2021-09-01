@@ -26,11 +26,11 @@ class Header extends React.Component {
 
 
             <Card.Img variant="top" style={{ width: '100px', height: '100px' }} src="https://cdn.discordapp.com/attachments/880434007140085811/881454520499077120/LogoTie.png" />
-            <Link className="linkContaner" to="/"> <span className='headerLinks'> Home</span> </Link>
-            <Link className="linkContaner" to="/profile"> <span className='headerLinks'>Profile</span></Link>
-            <Link className="linkContaner" to="/bookmarks"> <span className='headerLinks'>Bookmarks</span></Link>
-            <Link className="linkContaner" to="/applications"> <span className='headerLinks'>Applications</span></Link>
-            <Link className="linkContaner" to="/AboutUs"> <span className='headerLinks'>About Us</span></Link>
+            <Link classNames="linkContaner" to="/"> <span className='headerLinks'> Home</span> </Link>
+            <Link classNames="linkContaner" to="/profile"> <span className='headerLinks'>Profile</span></Link>
+            <Link classNames="linkContaner" to="/bookmarks"> <span className='headerLinks'>Bookmarks</span></Link>
+            <Link classNames="linkContaner" to="/applications"> <span className='headerLinks'>Applications</span></Link>
+            <Link classNames="linkContaner" to="/AboutUs"> <span className='headerLinks'>About Us</span></Link>
             {/* <Link  classNames="linkContaner" to="/TestAboutUS2.js">AboutUs2</Link> */}
 
             <div className="fill">

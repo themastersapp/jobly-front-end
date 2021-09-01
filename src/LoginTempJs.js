@@ -8,9 +8,9 @@ class LoginTempJs extends React.Component {
             <>
                 <div className="loginBody">
                     <div className='tempCont' >
-                        <div className="login-box">
-                            <div className="login-box-formbox">
-                                <div className="login-box-login">
+                        <div class="login-box">
+                            <div class="login-box-formbox">
+                                <div class="login-box-login">
                                     <h1 className="loginH1" >Welcome to Jobly</h1>
                                     <p>
                                         Start Your Journey With Us By Clicking Below To Login!
@@ -20,36 +20,36 @@ class LoginTempJs extends React.Component {
                                             <LoginButton />
                                         </div>
                                     </form>
-                                    <div className="alternate-boxes">
-                                        <div className="alternate-box">
+                                    <div class="alternate-boxes">
+                                        <div class="alternate-box">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                className="icon icon-tabler icon-tabler-brand-google"
+                                                class="icon icon-tabler icon-tabler-brand-google"
                                                 width="24"
                                                 height="24"
                                                 viewBox="0 0 24 24"
-                                                strokeWidth="2"
+                                                stroke-width="2"
                                                 stroke="currentColor"
                                                 fill="none"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
                                             >
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                                 <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"></path>
                                             </svg>
                                         </div>
-                                        <div className="alternate-box">
+                                        <div class="alternate-box">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                className="icon icon-tabler icon-tabler-brand-facebook"
+                                                class="icon icon-tabler icon-tabler-brand-facebook"
                                                 width="24"
                                                 height="24"
                                                 viewBox="0 0 24 24"
-                                                strokeWidth="2"
+                                                stroke-width="2"
                                                 stroke="currentColor"
                                                 fill="none"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
                                             >
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                                 <path
@@ -57,18 +57,18 @@ class LoginTempJs extends React.Component {
                                                 ></path>
                                             </svg>
                                         </div>
-                                        <div className="alternate-box">
+                                        <div class="alternate-box">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                className="icon icon-tabler icon-tabler-brand-apple"
+                                                class="icon icon-tabler icon-tabler-brand-apple"
                                                 width="24"
                                                 height="24"
                                                 viewBox="0 0 24 24"
-                                                strokeWidth="2"
+                                                stroke-width="2"
                                                 stroke="currentColor"
                                                 fill="none"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
                                             >
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                                 <path
@@ -80,10 +80,10 @@ class LoginTempJs extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="login-box-quotebox">
-                                <div className="quote-container">
-                                    <div className="quote">Make a Dream.</div>
-                                    <div className="quote-small">
+                            <div class="login-box-quotebox">
+                                <div class="quote-container">
+                                    <div class="quote">Make a Dream.</div>
+                                    <div class="quote-small">
                                         Jobly is a middle ware website used mainly to connect your clients professionally with companies around the world to get the job which our clients dream about, this platform is characterized by a fast application process with easy-used features,  Jobly is firmly committed to the region and has an excellent understanding of the Middle East and business landscape. Our Mission is connecting job seekers with employers looking to hire. Everyday hundreds of new job vacancies posted to empower people with the tools and knowledge to build their lifestyles of choice.
                                     </div>
 
@@ -93,8 +93,8 @@ class LoginTempJs extends React.Component {
                     </div>
 
                 </div>
-                <div className="area" >
-                    <ul className="circles">
+                <div class="area" >
+                    <ul class="circles">
                         <li></li>
                         <li></li>
                         <li></li>

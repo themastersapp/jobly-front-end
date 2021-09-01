@@ -5,17 +5,17 @@ class AboutUs extends React.Component {
         return (
             <>
              <h2 className="pageTitle">The Masters</h2>
-            <div className="mainCont" style={{ marginTop: "5%" }}>
+            <div classNameName="mainCont" style={{ marginTop: "5%" }}>
                 <div className="row about-cols" style={{ marginLeft: "10%" }}>
 
                     <div className="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
                         <div className="about-col">
-                            <div className="flip-card">
-                                <div className="flip-card-inner">
-                                    <div className="flip-card-front">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
                                         <img src="https://cdn.discordapp.com/attachments/880434007140085811/882564794194997288/87090765_2242164509426115_8345937203561496576_n.jpg" alt="Avatar" style={{ width: "300px", height: "300px" }} />
                                     </div>
-                                    <div className="flip-card-back">
+                                    <div class="flip-card-back">
                                         <div className="cardContant">
                                             <h1>Ahmad Alrasheed</h1>
                                             <p>Biomedical Engineering</p>
@@ -28,12 +28,12 @@ class AboutUs extends React.Component {
                     
                     <div className="col-md-4 wow fadeInUp" >
                         <div className="about-col">
-                            <div className="flip-card">
-                                <div className="flip-card-inner">
-                                    <div className="flip-card-front">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
                                         <img src="https://cdn.discordapp.com/attachments/880434007140085811/882565569931517982/aboutus.png" alt="Avatar" style={{ width: "300px", height: "300px" }} />
                                     </div>
-                                    <div className="flip-card-back">
+                                    <div class="flip-card-back">
                                         <div className="cardContant">
                                             <h1>Mohammad Alhanbali</h1>
                                             <p>Architectural Engineering</p>
