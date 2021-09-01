@@ -56,7 +56,9 @@ body{
   }
   
   .flip-card-back {
-     background-color: #bbb;
+    font-family: 'Noto Serif', serif;
+font-family: 'Roboto Condensed', sans-serif;
+     background-color: white;
     color: white;
     transform: rotateY(180deg);
   }
