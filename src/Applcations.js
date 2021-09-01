@@ -1,6 +1,8 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
+import Card from 'react-bootstrap/Card';
 
 
 class Applcations extends React.Component {
@@ -11,10 +13,20 @@ class Applcations extends React.Component {
     }
 
     render() {
-        console.log('inside Application', this.props.sentApplication);
-        return (
+        // console.log('inside Application', this.props.sentApplication);
 
-            <Table striped bordered hover size="sm">
+        if(this.props.sentApplication.length === 0) {
+            return (
+                <Alert className="emptyAlert" variant='primary'>
+                You have no sent applications yet.
+              </Alert>
+            )
+        } else{
+
+        return (
+            <Card  style={{ width: '82rem' }}>
+
+            <Table className="applicationsTable" striped bordered hover size="sm">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -24,7 +36,6 @@ class Applcations extends React.Component {
                         <th>Address</th>
                         <th>Phone Number</th>
                         <th>E-mail</th>
-                        <th>Bio</th>
                         <th>Status</th>
                         <th>Active/De-Active</th>
 
@@ -44,7 +55,6 @@ class Applcations extends React.Component {
                                 <td>{application.address}</td>
                                 <td>{application.userPhone}</td>
                                 <td>{application.email}</td>
-                                <td>{application.bio}</td>
                                 {application.active ? <td>🟢</td> : <td>🔴</td>}
                                 {application.active ? <td><Button onClick={()=>{this.handleWithdrawn(application)}} variant="success" style={{ fontWeight: 'bolder', width: "6.6rem" }} >WithDraw</Button></td> : <td><Button fontWeight='bolder' variant="danger" disabled >WithDrawn</Button></td>}
 
@@ -56,9 +66,10 @@ class Applcations extends React.Component {
                 </tbody>
             </Table>
 
+            </Card >
 
 
-        )
+        )}
     }
 }
 

@@ -9,8 +9,7 @@ class Carousels extends React.Component {
                 <Carousel className='myCarousel'>
                     <Carousel.Item interval={1000}>
                         <img
-                            height="600"
-                            width="800"
+                            
                             className="d-block w-100"
                             src="https://iaa-network.com/wp-content/uploads/2021/02/Job-openings.jpg"
                             alt="First slide"
@@ -22,8 +21,7 @@ class Carousels extends React.Component {
                     </Carousel.Item>
                     <Carousel.Item interval={500}>
                         <img
-                             height="600"
-                            width="800"
+                             
                             className="d-block w-100"
                             src="https://iaa-network.com/wp-content/uploads/2021/02/Job-openings.jpg"
                             alt="Second slide"
@@ -35,8 +33,7 @@ class Carousels extends React.Component {
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                            height="600"
-                            width="800"
+                        
                             className="d-block w-100"
                             src="https://iaa-network.com/wp-content/uploads/2021/02/Job-openings.jpg"
                             alt="Third slide"
