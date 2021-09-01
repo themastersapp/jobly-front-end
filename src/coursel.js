@@ -6,7 +6,7 @@ class Carousels extends React.Component {
     render() {
         return (
             <div className="contanerCoursel">
-                <Carousel className='myCarousel' style={{}}>
+                <Carousel className='myCarousel' style={{marginTop:'5%'}}>
                     <Carousel.Item interval={1000}>
                         <img
                             height="630px"

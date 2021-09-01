@@ -3,6 +3,8 @@ import './StylingAboutUs.css'
 class AboutUs extends React.Component {
     render() {
         return (
+            <>
+             <h2 className="pageTitle">The Masters</h2>
             <div classNameName="mainCont" style={{ marginTop: "5%" }}>
                 <div className="row about-cols" style={{ marginLeft: "10%" }}>
 
@@ -55,7 +57,7 @@ class AboutUs extends React.Component {
                                 <div class="flip-card">
                                     <div class="flip-card-inner">
                                         <div class="flip-card-front">
-                                            <img src="https://cdn.discordapp.com/attachments/880434007140085811/882567867885846568/me.PNG" alt="Avatar" style={{ width: "300px", height: "300px" }} />
+                                            <img src="https://media.discordapp.net/attachments/880434007140085811/882641513035747418/me2.PNG" alt="Avatar" style={{ width: "300px", height: "300px" }} />
                                         </div>
                                         <div class="flip-card-back">
                                             <div className="cardContant">
@@ -115,6 +117,7 @@ class AboutUs extends React.Component {
 
                     </div >
             </div>
+            </>
 
         )
     }

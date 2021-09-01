@@ -62,8 +62,8 @@ p {
   position: relative;
   padding-left: 11ch;
   // height: 50ch;
-  padding-top:9ch;
-  padding-bottom:9ch;
+  padding-top:8ch;
+  padding-bottom:20ch;
 
   z-index: 1;
 }
@@ -329,7 +329,7 @@ p {
 
 .quote {
   color: $clr-bg-box;
-  font-size: 7em;
+  font-size: 5em;
   font-weight: 600;
   line-height: 1;
   padding-left: 2ch;
@@ -338,7 +338,7 @@ p {
 .quote-small {
   color: $clr-bg-main;
   line-height: 180%;
-  font-size: 16px;
+  font-size: 18px;
   padding: 2em 0 0 6em;
   position: relative;
   font-weight: bolder;
