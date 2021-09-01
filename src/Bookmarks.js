@@ -4,6 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Alert from 'react-bootstrap/Alert'
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PopoutCard from './PopoutCard';
@@ -40,7 +41,7 @@ class Bookmarks extends React.Component {
             showApplication: false,
         })
     }
-    
+
     bookmarkHandler = async (item) => {
         await this.props.bookmarkHandler(item);
 
@@ -55,8 +56,15 @@ class Bookmarks extends React.Component {
     }
 
     render() {
-
+        if(this.props.bookmarkedJobs.length === 0) {
+            return (
+                <Alert className="emptyAlert" variant='primary'>
+                Your bookmarks page is empty.
+              </Alert>
+            )
+        } else
         return (
+
             <>
                 <Row xs={1} md={3} className="g-4">
                     {this.props.bookmarkedJobs.map((item, index) => {

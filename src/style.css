@@ -71,7 +71,8 @@ line-height: 25px;
 } 
 .myCarousel{
    width: 80%;
-   margin: auto;
+
+  margin: auto;
    margin-top:6px; 
    /* position: relative; */
    /* padding-bottom: 30px; */
@@ -79,6 +80,8 @@ line-height: 25px;
 
 .bookmarkCards{
     /* margin: auto; */
+
+  
 }
 
 .bookMarkButtonActive{
@@ -148,6 +151,10 @@ line-height: 25px;
 
 }
 
+.emptyAlert{
+text-align: center;
+}
+
 .readmoreModalTitle{
 text-align: center;
 font-size: 24px;
@@ -172,7 +179,7 @@ font-weight: 400;
 
 
 .jobCardsCol{
-min-height: 750px;
+min-height: 850px;
 }
 
 .card-custom {
@@ -184,7 +191,7 @@ min-height: 750px;
   .card .card-body{
    
    min-height: 400px;
-   max-height: 400px;
+   max-height: 600px;
 
   }
 

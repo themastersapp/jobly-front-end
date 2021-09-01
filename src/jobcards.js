@@ -61,7 +61,7 @@ class JobCards extends React.Component {
                 <Row xs={1} md={3} className="g-4">
                     {this.props.JobResults.map((item, index) => {
                         this.props.bookmarkedJobs.map(element => {
-                            if (item.title == element.title) {
+                            if (item.title === element.title) {
                                 item.bookmark = element.bookmark
                             }
                         })

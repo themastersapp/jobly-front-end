@@ -46,7 +46,7 @@ class App extends React.Component {
       location: e.target.location.value,
     }
     // console.log(Names);
-    let JobResults = await axios.get('http://localhost:3001/jobresults', { params: Names })
+    let JobResults = await axios.get(`${process.env.REACT_APP_SERVER_URL}/jobresults`, { params: Names })
     console.log(JobResults.data);
     await this.setState({
       JobData: JobResults.data,
@@ -62,14 +62,14 @@ class App extends React.Component {
       user: user.email
     }
     if (bookmarked.bookmark === true) {
-      let jobBookmark = await axios.post('http://localhost:3001/jobbookmarks', bookMarkData);
+      let jobBookmark = await axios.post(`${process.env.REACT_APP_SERVER_URL}/jobbookmarks`, bookMarkData);
 
       await this.setState({
         bookmarkedJobs: jobBookmark.data,
       })
 
     } else {
-      let jobBookmark = await axios.delete(`http://localhost:3001/jobbookmarks/${bookMarkData.bookmarked._id}`);
+      let jobBookmark = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/jobbookmarks/${bookMarkData.bookmarked._id}`);
       await this.setState({
         bookmarkedJobs: jobBookmark.data,
       })
@@ -107,7 +107,7 @@ class App extends React.Component {
     }
     // console.log('applicationData', applicationData);
 
-    let sendApplication = await axios.post('http://localhost:3001/applications', applicationData);
+    let sendApplication = await axios.post(`${process.env.REACT_APP_SERVER_URL}/applications`, applicationData);
 
     await this.setState({
       sentApplication: sendApplication.data,
@@ -119,7 +119,7 @@ class App extends React.Component {
   activeFunc=async(item)=>{
     // console.log({item})
 
-    let putActive= await axios.put('http://localhost:3001/applications', item);
+    let putActive= await axios.put(`${process.env.REACT_APP_SERVER_URL}/applications`, item);
     this.setState({
       sendApplication: putActive.data,
     })
@@ -141,13 +141,13 @@ class App extends React.Component {
     }
     console.log(this.state.retrieveProfile.length, this.state.retrieveProfile);
     if(this.state.retrieveProfile.length===0){
-      let dataProfileput=await axios.post('http://localhost:3001/profileForm',dataProfile)
+      let dataProfileput=await axios.post(`${process.env.REACT_APP_SERVER_URL}/profileForm`,dataProfile)
       await this.setState({
         retrieveProfile:dataProfileput.data
       })
 
     }else{
-      let dataProfileput=await axios.put('http://localhost:3001/retrieveProfile',dataProfile)
+      let dataProfileput=await axios.put(`${process.env.REACT_APP_SERVER_URL}/retrieveProfile`,dataProfile)
       await this.setState({
         retrieveProfile:dataProfileput.data
       })
@@ -167,11 +167,11 @@ class App extends React.Component {
         await this.setState({
           user:user
         })
-        let retrieveApplications=await axios.get(`http://localhost:3001/retrieveApplications?email=${this.state.user.email}`)
+        let retrieveApplications=await axios.get(`${process.env.REACT_APP_SERVER_URL}/retrieveApplications?email=${this.state.user.email}`)
         // console.log(retrieveApplications);
-        let retrieveBookmarks=await axios.get(`http://localhost:3001/retrieveBookmarks?email=${this.state.user.email}`)
+        let retrieveBookmarks=await axios.get(`${process.env.REACT_APP_SERVER_URL}/retrieveBookmarks?email=${this.state.user.email}`)
         // console.log(retrieveBookmarks.data);
-        let retrieveProfile=await axios.get(`http://localhost:3001/retrieveProfile?email=${this.state.user.email}`)
+        let retrieveProfile=await axios.get(`${process.env.REACT_APP_SERVER_URL}/retrieveProfile?email=${this.state.user.email}`)
         console.log(retrieveProfile.data);
         await this.setState({
           bookmarkedJobs:retrieveBookmarks.data,

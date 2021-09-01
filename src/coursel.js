@@ -11,6 +11,7 @@ class Carousels extends React.Component {
                         <img
                             height="630px"
                             // width="800"
+
                             className="d-block w-100"
                             src="https://images.unsplash.com/photo-1561489422-45de3d015e3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
                             alt="First slide"
@@ -22,8 +23,11 @@ class Carousels extends React.Component {
                     </Carousel.Item>
                     <Carousel.Item interval={500}>
                         <img
+
+
                             height="630px"
                             // width="800"
+
                             className="d-block w-100"
                             src="https://images.unsplash.com/photo-1520085601670-ee14aa5fa3e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
                             alt="Second slide"
@@ -35,8 +39,12 @@ class Carousels extends React.Component {
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
+
+
                             height="630px"
                             // width="800"
+
+
                             className="d-block w-100"
                             src="https://images.unsplash.com/photo-1488998527040-85054a85150e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
                             alt="Third slide"
