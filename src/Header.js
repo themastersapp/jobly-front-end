@@ -30,6 +30,8 @@ class Header extends React.Component {
             <Link  classNames="linkContaner" to="/profile">Profile</Link>
             <Link  classNames="linkContaner" to="/bookmarks">Bookmarks</Link>
             <Link  classNames="linkContaner" to="/applications">Applications</Link>
+            <Link  classNames="linkContaner" to="/AboutUs">AboutUs</Link> 
+               {/* <Link  classNames="linkContaner" to="/TestAboutUS2.js">AboutUs2</Link> */}
 
             <div className="fill">
               {(this.props.auth0.isAuthenticated) ? <LogoutButton /> : <LoginButton />}
@@ -58,10 +60,10 @@ class Header extends React.Component {
         {/* <!--Header ends--> */}
 
         {/* <!--Content starts--> */}
-        <div className="content flex">
+        {/* <div className="content flex"> </div> */}
           {/* <p>Daniel Österman | 2019 | Free to use
   | CREDIT TO GOODKATZ</p> */}
-        </div>
+       
         {/* <!--Content ends--> */}
       </>
     );

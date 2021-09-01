@@ -11,6 +11,7 @@ import Applcations from './Applcations';
 
 
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +19,8 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 import Bookmark from './Bookmark';
+import AboutUs from './AboutUs';
+import TestAboutUS2 from './TestAboutUS2';
 
 class App extends React.Component {
   constructor(props) {
@@ -220,6 +223,18 @@ class App extends React.Component {
               
               {isAuthenticated?<> <Header /><Applcations sentApplication={this.state.sentApplication} activeFunc={this.activeFunc}/>   <Footer /></>:<Login />}
             </Route>
+
+            
+            <Route exact path="/AboutUs">
+              
+              {isAuthenticated?<> <Header /><AboutUs/></>:<Login />}
+            </Route>
+
+               
+            {/* <Route exact path="/TestAboutUS2.js">
+              
+              {isAuthenticated?<> <Header /><TestAboutUS2/></>:<Login />}
+            </Route> */}
           
           </Switch>
 

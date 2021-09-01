@@ -64,11 +64,17 @@ line-height: 25px;
 
 /* /PROFILE FORM */
 
-
+ .contanerCoursel{
+    /* margin-bottom: 75px; */
+    /* position: relative;
+    bottom:55px; */
+} 
 .myCarousel{
    width: 80%;
-   margin: auto; 
-   margin-top: 30px;
+   margin: auto;
+   margin-top:6px; 
+   /* position: relative; */
+   /* padding-bottom: 30px; */
 }
 
 .bookmarkCards{
