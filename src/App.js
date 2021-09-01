@@ -227,7 +227,7 @@ class App extends React.Component {
             
             <Route exact path="/AboutUs">
               
-              {isAuthenticated?<> <Header /><AboutUs/></>:<Login />}
+              {isAuthenticated?<> <Header /><AboutUs/> <Footer /></>:<Login />}
             </Route>
 
                

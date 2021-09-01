@@ -39,7 +39,7 @@ class JobCards extends React.Component {
             showApplication: false,
         })
     }
-    
+
     handleApplicationClose = () => {
         this.setState({
             showApplication: false,
@@ -67,24 +67,24 @@ class JobCards extends React.Component {
                         })
                         return (
                             <Col className="jobCardsCol" key={index}>
-                                <Card style={{ width: '28rem' }} class="card card-custom bg-white border-white border-0">
+                                <Card style={{ width: '28rem' }} id="jobCardsShadow" class="card card-custom bg-white border-white border-0">
 
 
                                     <div className="card-custom-img">
-                                        <Card.Img className="card-custom-img" variant="top" src="https://thumbs.gfycat.com/AdorableLonelyKilldeer-size_restricted.gif" />
+                                        <Card.Img className="card-custom-img"  variant="top" src="https://thumbs.gfycat.com/AdorableLonelyKilldeer-size_restricted.gif" />
                                     </div>
 
                                     <div className="card-custom-avatar">
                                         {!item.bookmark &&
-                                        <button  className={item.bookmark ? "bookMarkButtonActive img-fluid" : "bookMarkButtonInactive img-fluid"} onClick={() => {
-                                            if (item.bookmark === false) {
-                                                item.bookmark = true;
-                                            } else {
-                                                item.bookmark = false;
-                                            }
-                                            this.props.bookmarkHandler(item);
-                                        }}>
-                                            <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faBookmark} /> </button>}
+                                            <button className={item.bookmark ? "bookMarkButtonActive img-fluid" : "bookMarkButtonInactive img-fluid"} onClick={() => {
+                                                if (item.bookmark === false) {
+                                                    item.bookmark = true;
+                                                } else {
+                                                    item.bookmark = false;
+                                                }
+                                                this.props.bookmarkHandler(item);
+                                            }}>
+                                                <FontAwesomeIcon className={item.bookmark ? "bookMarkIconActive" : "bookMarkIconInctive"} icon={faBookmark} /> </button>}
                                     </div>
 
                                     <Card.Body>
@@ -108,9 +108,9 @@ class JobCards extends React.Component {
                                             </ListGroup>
                                         </Card.Text>
                                     </Card.Body>
-                                        <Button  classname ="applyButton" variant="primary" onClick={() => {
-                                            this.handleApplicationhow(item);
-                                        }}>Apply</Button>
+                                    <Button id="applyButton" variant="primary" onClick={() => {
+                                        this.handleApplicationhow(item);
+                                    }}>Apply</Button>
                                 </Card>
                             </Col>
                         )

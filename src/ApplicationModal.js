@@ -88,10 +88,10 @@ class ApplicationModal extends React.Component {
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label className = "applicationFormLabels">Bio</Form.Label>
-                                <Form.Control as="textarea" rows={3} name="bio" required defaultValue={this.props.retrieveProfile[0].bio} />
+                                <Form.Control className="formTextArea" as="textarea" rows={3} name="bio" required defaultValue={this.props.retrieveProfile[0].bio} />
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" >
+                            <Button id="applyButton" variant="primary" type="submit" >
                                 Send Application
                             </Button>
                             {this.state.showSpinner &&

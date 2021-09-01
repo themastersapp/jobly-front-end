@@ -13,11 +13,11 @@ const Profile = (props) => {
   // {console.log(props.retrieveProfile)}
   return (
     isAuthenticated && (
-      <Card  style={{ width: '64rem' }} class="card card-custom bg-white border-white border-0">
+      <Card  style={{ width: '64rem', marginTop:'5%', marginBottom:'5%' }} class="card card-custom bg-white border-white border-0">
       <div className="profileCard">
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
+        <img src={user.picture} alt={user.name} className="profileData" style={{width:'150px', border:'solid 5px rgba(0,0,0,.8)', borderRadius:'100%'}}/>
+        <h2 className="profileData" >{user.name}</h2>
+        <p className="profileData" style={{fontSize:'18px'}} > {user.email}</p>
         <UpdateForm retrieveProfile={props.retrieveProfile} submittProfileData={props.submittProfileData}/>
       </div>
       </Card>
