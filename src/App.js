@@ -20,7 +20,6 @@ import {
 import axios from 'axios';
 import Bookmark from './Bookmark';
 import AboutUs from './AboutUs';
-import TestAboutUS2 from './TestAboutUS2';
 
 class App extends React.Component {
   constructor(props) {
@@ -47,7 +46,7 @@ class App extends React.Component {
     }
     // console.log(Names);
     let JobResults = await axios.get(`${process.env.REACT_APP_SERVER_URL}/jobresults`, { params: Names })
-    console.log(JobResults.data);
+    // console.log(JobResults.data);
     await this.setState({
       JobData: JobResults.data,
       showcard: true
@@ -78,7 +77,7 @@ class App extends React.Component {
         if(item.title==bookmarked.title){
           return item.bookmark=false;
         }
-        console.log('helooooooooooooooooooo',this.state.JobData);
+        // console.log('helooooooooooooooooooo',this.state.JobData);
       })
     }
 
@@ -139,7 +138,7 @@ class App extends React.Component {
       bio:event.target.bio.value,
       user:user.email,
     }
-    console.log(this.state.retrieveProfile.length, this.state.retrieveProfile);
+    // console.log(this.state.retrieveProfile.length, this.state.retrieveProfile);
     if(this.state.retrieveProfile.length===0){
       let dataProfileput=await axios.post(`${process.env.REACT_APP_SERVER_URL}/profileForm`,dataProfile)
       await this.setState({
@@ -172,7 +171,7 @@ class App extends React.Component {
         let retrieveBookmarks=await axios.get(`${process.env.REACT_APP_SERVER_URL}/retrieveBookmarks?email=${this.state.user.email}`)
         // console.log(retrieveBookmarks.data);
         let retrieveProfile=await axios.get(`${process.env.REACT_APP_SERVER_URL}/retrieveProfile?email=${this.state.user.email}`)
-        console.log(retrieveProfile.data);
+        // console.log(retrieveProfile.data);
         await this.setState({
           bookmarkedJobs:retrieveBookmarks.data,
           sentApplication:retrieveApplications.data,

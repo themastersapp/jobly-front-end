@@ -55,7 +55,7 @@ class JobCards extends React.Component {
     }
 
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         return (
             <>
                 <Row xs={1} md={3} className="g-4">
@@ -63,11 +63,12 @@ class JobCards extends React.Component {
                         this.props.bookmarkedJobs.map(element => {
                             if (item.title === element.title) {
                                 item.bookmark = element.bookmark
+                                return null;
                             }
                         })
                         return (
                             <Col className="jobCardsCol" key={index}>
-                                <Card style={{ width: '28rem' }} id="jobCardsShadow" class="card card-custom bg-white border-white border-0">
+                                <Card style={{ width: '28rem' }} id="jobCardsShadow" classNames="card card-custom bg-white border-white border-0">
 
 
                                     <div className="card-custom-img">
