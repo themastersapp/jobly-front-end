@@ -121,7 +121,7 @@ margin-top: 15px;
 
 
 .bookMarkIconActive{
-    opacity: 100%;
+    opacity: 50%;
     border:  none;
     color: white;
 }
@@ -139,7 +139,7 @@ margin-top: 15px;
 }
 
 .bookMarkIconInctive{
-    opacity: 100%;
+    opacity: 50%;
     border:  none;
     color: white;
 }
