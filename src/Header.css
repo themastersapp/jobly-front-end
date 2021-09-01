@@ -50,7 +50,7 @@ link{
   }
 .inner-header a,.tags {
   color:white;
-  margin-left: 8rem;
+  margin-left: 5rem;
   /* justify-content:space-between; */
 }
 /* .tags{} */
@@ -77,7 +77,7 @@ LoginButton{
   font-weight: bold;
   border: 3px solid rgba(255, 255, 255, 0.75);
 
-  margin-left: 8rem;
+  margin-left: 5rem;
   position: relative;
   background-color: transparent;
 }
@@ -106,7 +106,7 @@ LoginButton{
 
 .logContaner{
   
-  padding-left: 3ch;
+  /* padding-left: 4ch; */
   position: relative;
   right: 6%;
   top: 7%;

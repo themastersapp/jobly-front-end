@@ -8,6 +8,7 @@
     padding: 20px;
 
 }
+
 .myform Label{
 position: relative;
 left: 42%;
@@ -21,6 +22,8 @@ font-weight: bolder;
     border-radius: 10px;
 
 }
+
+
 
 /* PROFILE FORM */
 
@@ -246,6 +249,10 @@ min-height: 850px;
   }
   
   /* Application */
+
+
+
+  
 #applyButton {
 
 padding-top: 10px;
