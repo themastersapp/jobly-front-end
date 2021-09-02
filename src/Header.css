@@ -1,7 +1,206 @@
-a{
+/* a{
   color:#fff;
 }
-
 a:hover{
   color:darkgrey;
+} */
+
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+  margin:0;
+}
+
+/* h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+} */
+p {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  font-size:14px;
+  color: #333333;
+}
+
+.header {
+  position:relative;
+  text-align:center;
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  color:white;
+  /* height: 50%; */
+}
+
+.logo {
+  width:50px;
+  fill:white;
+  padding-right:15px;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  height:15vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  }
+.inner-header a,.tags {
+  color:white;
+  margin-left: 5rem;
+  /* justify-content:space-between; */
+}
+/* .tags{} */
+/* LogoutButton {
+  transition-duration: 0.4s;
+}
+LoginButton{
+  transition-duration: 0.4s;
+} */
+
+/* Fill button styling */
+
+/* LOGIN AND HEADER */
+.fill button {
+  font-size: 17px;
+
+  color:white;
+  width: 200px;
+  height: 70px;
+  letter-spacing: 5px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  font-size: 15px;
+  font-weight: bold;
+  border: 3px solid rgba(255, 255, 255, 0.75);
+
+  margin-left: 5rem;
+  position: relative;
+  background-color: transparent;
+}
+
+.fill button:hover {
+  height: 80px;
+  width: 210px;
+
+  transition: 500ms;
+  background-color: rgba(235, 235, 235, 0.4);
+  border: 3px solid rgb(255, 255, 255);
+
+}
+
+.fill button:active {
+  width: 200px;
+  height: 70px;
+  background-color: rgba(200 , 200, 200, 0.25);
+
+}
+
+
+/* /LOGIN AND HEADER */
+
+
+
+.logContaner{
+  
+  /* padding-left: 4ch; */
+  position: relative;
+  right: 6%;
+  top: 7%;
+}
+
+.headerLinks{
+  color: white;
+  opacity: 80%;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.headerLinks:hover{
+  opacity: 100%;
+  transition: 300ms;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.headerLinks:active{
+  opacity: 100%;
+  transition: 500ms;
+  font-size: 24px;
+  font-weight: bolder;
+
+}
+
+/* End of Fill Button  */
+
+.tags button:hover {
+  background-color: #A6B1E1; /* Green */ /*Flexbox for containers*/
+  color: white;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; 
+  min-height:100px;
+  max-height:150px;
+}
+
+.content {
+  position:relative;
+  height:50vh;
+
+  text-align:center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
 }

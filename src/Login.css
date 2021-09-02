@@ -2,3 +2,23 @@
   margin: auto;
   text-align: center;
 }
+
+.corousalCont{
+  position: relative;
+  margin-bottom: -330px;
+  bottom: 130px;
+  z-index: 0;
+
+}
+
+.MyCard{
+  position: relative;
+  bottom: 500px;
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+
+}
+
+
